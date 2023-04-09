@@ -11,12 +11,12 @@
 
     <div class="form-group">
       <label for="employe">Employe </label>
-      <input id="employe" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.employe">
+      <input id="employe" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.employe.cin">
     </div>
 
     <div class="form-group">
       <label for="declarationIR">DeclarationIR</label>
-      <input id="declarationIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.declarationIR">
+      <input id="declarationIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.declarationIR.code">
     </div>
 
     <div class="form-group">
@@ -36,12 +36,12 @@
 
     <div class="form-group">
       <label for="tauxIR">MontantIR</label>
-      <input id="tauxIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.tauxIR">
+      <input id="tauxIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.tauxIR.libelle">
     </div>
 
     <div class="form-group">
       <label for="demandeDeclaration">DemandeDeclaration</label>
-      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.demandeDeclaration">
+      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.demandeDeclaration.ref">
     </div>
 
 
@@ -50,3 +50,4 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
+<app-declarationIRdetailles-list></app-declarationIRdetailles-list>

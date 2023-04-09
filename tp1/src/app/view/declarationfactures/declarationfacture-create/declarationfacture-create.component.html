@@ -11,7 +11,7 @@
 
     <div class="form-group">
       <label for="demandedeclaration">Demande Declaration</label>
-      <input id="demandedeclaration" type="text" class="form-control"  [(ngModel)]="declarationfacture.demandeDeclaration">
+      <input id="demandedeclaration" type="text" class="form-control"  [(ngModel)]="declarationfacture.demandeDeclaration.ref">
     </div>
 
     <div class="form-group">
@@ -36,7 +36,7 @@
 
     <div class="form-group">
       <label for="typeFacture">Type Facture</label>
-      <input id="typeFacture" type="text" class="form-control"  [(ngModel)]="declarationfacture.typeFacture">
+      <input id="typeFacture" type="text" class="form-control"  [(ngModel)]="declarationfacture.typeFacture.code">
     </div>
 
   </div>
@@ -44,4 +44,5 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
+<app-declarationfacture-list></app-declarationfacture-list>
 

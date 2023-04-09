@@ -1,0 +1,79 @@
+<nav  class="navbar navbar-expand-lg " style="background-color: lightsalmon">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Comptabilite</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav" >
+
+      <!--  <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            IR
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="declarationIR-create" routerLinkActive="active-link">declarationIR</a></li>
+            <li><a class="dropdown-item" routerLink="declarationIRdetailles-create" routerLinkActive="active-link">declarationIRdetailles</a></li>
+            <li><a class="dropdown-item" routerLink="tauxIR-create" routerLinkActive="active-link">tauxIR</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Facture
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="declarationFacture-create" routerLinkActive="active-link">declarationFacture</a></li>
+            <li><a class="dropdown-item" routerLink="typeFacture-create" routerLinkActive="active-link">typeFacture</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Comptable
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="comptable-create" routerLinkActive="active-link">comptable</a></li>
+            <li><a class="dropdown-item" routerLink="categorieComptable-create" routerLinkActive="active-link">categorieComptable</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Payment
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="paymentDeclaration-create" routerLinkActive="active-link">paymentDeclaration</a></li>
+            <li><a class="dropdown-item" routerLink="typePayment-create" routerLinkActive="active-link">typePayment</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Societe
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="societe-create" routerLinkActive="active-link">Societe</a></li>
+            <li><a class="dropdown-item" routerLink="categorieSociete-create" routerLinkActive="active-link">categorieSociete</a></li>
+            <li><a class="dropdown-item" routerLink="employe-create" routerLinkActive="active-link">employe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Declaration
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="demandeDeclaration-create" routerLinkActive="active-link">demandeDeclaration</a></li>
+            <li><a class="dropdown-item" routerLink="demandeDeclarationDetailles-create" routerLinkActive="active-link">demandeDeclarationDetailles</a></li>
+            <li><a class="dropdown-item" routerLink="categorieDeclaration-create" routerLinkActive="active-link">categorieDeclaration</a></li>
+            <li><a class="dropdown-item" routerLink="etatDeclaration-create" routerLinkActive="active-link">etatDeclaration</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+

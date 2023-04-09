@@ -7,15 +7,15 @@ import {CategorieDeclaration} from "./categorieDeclaration.model";
 export class DemandeDeclaration {
   public id !:number ;
   public ref !:string ;
-  public dateDeclaration !:Date ;
-  public categorieDeclaration !:CategorieDeclaration ;
+  public dateDeclaration = new Date() ;
+  public categorieDeclaration = new CategorieDeclaration() ;
   public totalPaye !:number;
   public total!:number ;
   public totalEsps !:number;
   public totalNonEsps !:number;
-  public comptableDeclarant !:Comptable;
-  public comptableVerifiant !:Comptable;
-  public Societe !:Societe;
+  public comptableDeclarant = new Comptable();
+  public comptableVerifiant = new Comptable();
+  public Societe = new Societe();
 }
 
 

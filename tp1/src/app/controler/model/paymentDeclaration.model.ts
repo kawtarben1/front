@@ -5,7 +5,7 @@ export class PaymentDeclaration {
   public id !:number ;
   public code !:string ;
   public montant !:number ;
-  public datePayment !:Date;
-  public typePayment !:TypePayment ;
-  public demandeDeclaration !:DemandeDeclaration ;
+  public datePayment = new Date();
+  public typePayment = new TypePayment() ;
+  public demandeDeclaration = new DemandeDeclaration() ;
 }

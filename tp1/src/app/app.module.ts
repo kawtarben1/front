@@ -29,14 +29,17 @@ import { DemandeDeclarationCreateComponent } from './view/demandeDeclarations/de
 import { DemandeDeclarationListComponent } from './view/demandeDeclarations/demandeDeclaration-list/demandeDeclaration-list.component';
 import { TypeFactureCreateComponent } from './view/typeFactures/typeFacture-create/typeFacture-create.component';
 import { TypeFactureListComponent } from './view/typeFactures/typeFacture-list/typeFacture-list.component';
-import { TauxIRCreateComponent } from './view/TauxIRs/TauxIR-create/TauxIR-create.component';
-import { TauxIRListComponent } from './view/TauxIRs/TauxIR-list/TauxIR-list.component';
+
 import { SocieteCreateComponent} from "./view/societes/societe-create/societe-create.component";
 import { SocieteListComponent} from "./view/societes/societe-list/societe-list.component";
 import { TypePaymentCreateComponent} from "./view/typePayments/typePayment-create/typePayment-create.component";
 import { TypePaymentListComponent} from "./view/typePayments/typePayment-list/typePayment-list.component";
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
+import {TauxIRCreateComponent} from "./view/tauxIRs/tauxIR-create/tauxIR-create.component";
+import {TauxIRListComponent} from "./view/tauxIRs/tauxIR-list/tauxIR-list.component";
+import { HomeComponent } from './view/home/home.component';
 
 
 @NgModule({
@@ -73,7 +76,9 @@ import {FormsModule} from "@angular/forms";
     TypeFactureCreateComponent,
     TypeFactureListComponent,
     TypePaymentCreateComponent,
-    TypePaymentListComponent
+    TypePaymentListComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

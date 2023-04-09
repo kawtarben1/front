@@ -6,13 +6,13 @@ import {DeclarationIR} from "./declarationIR.model";
 export class DeclarationIRdetailles {
   public id !:number ;
   public code !:string ;
-  public declarationIR !:DeclarationIR ;
+  public declarationIR = new DeclarationIR() ;
   public salaireEmployeNet !:number;
   public salaireEmployeBrute!:number ;
   public montantIR !:number;
-  public employe !:Employe;
-  public tauxIR !:TauxIR;
-  public demandeDeclaration !:DemandeDeclaration;
+  public employe = new Employe();
+  public tauxIR = new TauxIR();
+  public demandeDeclaration = new DemandeDeclaration();
 }
 
 

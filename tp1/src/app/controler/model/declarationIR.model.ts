@@ -6,8 +6,8 @@ export class DeclarationIR {
   public totalTaxe !:number;
   public salaireTotalNet !:number ;
   public salaireTotalBrute !:number;
-  public date !:Date;
-  public declarationIRdetailles !: Array<DeclarationIRdetailles>;
+  public date = new Date();
+  public declarationIRdetailles = new Array<DeclarationIRdetailles>();
 }
 
 

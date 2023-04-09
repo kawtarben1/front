@@ -1,0 +1,34 @@
+#hero {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  background-position: center center;
+
+}
+
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .hero-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  flex-direction: column;
+
+}

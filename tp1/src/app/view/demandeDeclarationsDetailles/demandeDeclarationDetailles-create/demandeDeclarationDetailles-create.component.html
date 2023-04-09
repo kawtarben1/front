@@ -21,7 +21,7 @@
 
     <div class="form-group">
       <label for="demandeDeclaration">DemandeDeclaration</label>
-      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclarationDetailles.demandeDeclaration">
+      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclarationDetailles.demandeDeclaration.ref">
     </div>
 
   </div>
@@ -29,3 +29,4 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
+<app-demandeDeclarationDetailles-list></app-demandeDeclarationDetailles-list>

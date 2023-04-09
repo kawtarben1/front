@@ -5,7 +5,7 @@ export class DemandeDeclarationDetailles {
   public ref !:string ;
   public pathFichier !:string ;
   public description !:string;
-  public demandeDeclaration !:DemandeDeclaration ;
+  public demandeDeclaration = new DemandeDeclaration() ;
 
 }
 

@@ -1,0 +1,3 @@
+.table{
+  border-radius: var(--bs-card-inner-border-radius) var(--bs-card-inner-border-radius) 0 0;
+}

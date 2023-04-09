@@ -36,22 +36,22 @@
 
     <div class="form-group">
       <label for="categorieDeclaration">CategorieDeclaration</label>
-      <input id="categorieDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.categorieDeclaration">
+      <input id="categorieDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.categorieDeclaration.code">
     </div>
 
     <div class="form-group">
       <label for="comptableDeclarant">DomptableDeclarant</label>
-      <input id="comptableDeclarant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableDeclarant">
+      <input id="comptableDeclarant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableDeclarant.cin">
     </div>
 
     <div class="form-group">
       <label for="comptableVerifiant">ComptableVerifiant</label>
-      <input id="comptableVerifiant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableVerifiant">
+      <input id="comptableVerifiant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableVerifiant.cin">
     </div>
 
     <div class="form-group">
       <label for="Societe">Societe</label>
-      <input id="Societe" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.Societe">
+      <input id="Societe" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.Societe.ice">
     </div>
 
 
@@ -60,3 +60,4 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
+<app-demandeDeclaration-list></app-demandeDeclaration-list>
