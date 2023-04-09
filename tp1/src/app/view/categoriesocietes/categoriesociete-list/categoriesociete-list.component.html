@@ -1,0 +1,14 @@
+<table class="table table-bordered table-hover" *ngIf="categoriesocietes.length !=0">
+  <thead>
+  <th>Code</th>
+  <th>Libelle</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cs of categoriesocietes ; index as i ">
+    <td>{{cs.code}}</td>
+    <td>{{cs.libelle}}</td>
+    <td><span (click)="deleteByCode(cs, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover" *ngIf="societes.length !=0">
+  <thead>
+  <th>ice</th>
+  <th>libelle</th>
+  <th>categorieSociete</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of societes; index as i">
+    <td>{{df.ice}}</td>
+    <td>{{df.libelle}}</td>
+    <td>{{df.categorieSociete}}</td>
+    <td><span (click)="deleteByIce(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

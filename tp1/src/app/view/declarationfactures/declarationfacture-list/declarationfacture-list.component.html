@@ -1,0 +1,26 @@
+<table class="table table-bordered table-hover" *ngIf="declarationfactures.length !=0">
+  <thead>
+  <th>Reference</th>
+  <th>Demande Declaration</th>
+  <th>Montant TTC</th>
+  <th>TVA</th>
+  <th>Montant  HT</th>
+  <th>Date Facture</th>
+  <th>Type Facture</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of declarationfactures; index as i">
+    <td>{{df.ref}}</td>
+    <td>{{df.demandeDeclaration}}</td>
+    <td>{{df.montantTTC}}</td>
+    <td>{{df.tva}}</td>
+    <td>{{df.montantHT}}</td>
+    <td>{{df.dateFacture}}</td>
+    <td>{{df.typeFacture}}</td>
+    <td><span (click)="deleteByTypeFactureref(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

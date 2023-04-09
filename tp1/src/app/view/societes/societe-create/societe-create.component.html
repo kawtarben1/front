@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">Creation Societe</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="ice">Ice</label>
+      <input id="ice" type="text" class="form-control"  [(ngModel)]="societe.ice">
+    </div>
+
+
+    <div class="form-group">
+      <label for="libelle">Libelle </label>
+      <input id="libelle" type="text" class="form-control"  [(ngModel)]="societe.libelle">
+    </div>
+
+    <div class="form-group">
+      <label for="categorieSociete">CategorieSociete</label>
+      <input id="categorieSociete" type="text" class="form-control"  [(ngModel)]="societe.categorieSociete">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

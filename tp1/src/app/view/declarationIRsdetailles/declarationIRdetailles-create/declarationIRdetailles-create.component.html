@@ -1,0 +1,52 @@
+<div class="card">
+  <div class="card-header">Creation DeclarationIRdetailles</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input id="code" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.code">
+    </div>
+
+
+    <div class="form-group">
+      <label for="employe">Employe </label>
+      <input id="employe" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.employe">
+    </div>
+
+    <div class="form-group">
+      <label for="declarationIR">DeclarationIR</label>
+      <input id="declarationIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.declarationIR">
+    </div>
+
+    <div class="form-group">
+      <label for="salaireEmployeNet">SalaireEmployeNet</label>
+      <input id="salaireEmployeNet" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.salaireEmployeNet">
+    </div>
+
+    <div class="form-group">
+      <label for="salaireEmployeBrute">SalaireEmployeBrute</label>
+      <input id="salaireEmployeBrute" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.salaireEmployeBrute">
+    </div>
+
+    <div class="form-group">
+      <label for="montantIR">MontantIR</label>
+      <input id="montantIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.montantIR">
+    </div>
+
+    <div class="form-group">
+      <label for="tauxIR">MontantIR</label>
+      <input id="tauxIR" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.tauxIR">
+    </div>
+
+    <div class="form-group">
+      <label for="demandeDeclaration">DemandeDeclaration</label>
+      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="declarationIRdetailles.demandeDeclaration">
+    </div>
+
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

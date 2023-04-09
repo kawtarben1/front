@@ -1,0 +1,36 @@
+<div class="card">
+  <div class="card-header">Creation PaymentDeclaration</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input id="code" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.code">
+    </div>
+
+
+    <div class="form-group">
+      <label for="montant">Montant </label>
+      <input id="montant" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.montant">
+    </div>
+
+    <div class="form-group">
+      <label for="datePayment">DatePayment</label>
+      <input id="datePayment" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.datePayment">
+    </div>
+
+    <div class="form-group">
+      <label for="demandeDeclaration">DemandeDeclaration</label>
+      <input id="demandeDeclaration" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.demandeDeclaration">
+    </div>
+
+    <div class="form-group">
+      <label for="typePayment">TypePayment</label>
+      <input id="typePayment" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.typePayment">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

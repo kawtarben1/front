@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover" *ngIf="demandeDeclarationDetailless.length !=0">
+  <thead>
+  <th>Ref</th>
+  <th>PathFichier</th>
+  <th>Description</th>
+  <th>DemandeDeclaration</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of demandeDeclarationDetailless; index as i">
+    <td>{{df.ref}}</td>
+    <td>{{df.pathFichier}}</td>
+    <td>{{df.description}}</td>
+    <td>{{df.demandeDeclaration}}</td>
+    <td><span (click)="deleteByRef(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

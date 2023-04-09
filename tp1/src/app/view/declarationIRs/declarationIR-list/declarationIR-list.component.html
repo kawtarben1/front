@@ -1,0 +1,25 @@
+<table class="table table-bordered table-hover" *ngIf="declarationIRs.length !=0">
+  <thead>
+  <th>Code</th>
+  <th>TotalTaxe</th>
+  <th>SalaireTotalNet</th>
+  <th>SalaireTotalBrute</th>
+  <th>Date</th>
+  <th>DeclarationIRdetailles</th>
+  <th></th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of declarationIRs; index as i">
+    <td>{{df.code}}</td>
+    <td>{{df.totalTaxe}}</td>
+    <td>{{df.salaireTotalNet}}</td>
+    <td>{{df.salaireTotalBrute}}</td>
+    <td>{{df.date}}</td>
+    <td>{{df.declarationIRdetailles}}</td>
+    <td><span (click)="deleteByCode(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

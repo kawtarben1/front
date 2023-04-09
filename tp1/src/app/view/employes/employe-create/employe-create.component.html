@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-header">Creation Employe</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input id="nom" type="text" class="form-control"  [(ngModel)]="employe.nom">
+    </div>
+
+
+    <div class="form-group">
+      <label for="prenom">Prenom</label>
+      <input id="prenom" type="text" class="form-control"  [(ngModel)]="employe.prenom">
+    </div>
+
+    <div class="form-group">
+      <label for="cin">Cin</label>
+      <input id="cin" type="text" class="form-control"  [(ngModel)]="employe.cin">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

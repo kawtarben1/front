@@ -1,0 +1,32 @@
+<table class="table table-bordered table-hover" *ngIf="demandeDeclarations.length !=0">
+  <thead>
+  <th>Ref</th>
+  <th>DateDeclaration</th>
+  <th>TotalPaye</th>
+  <th>Total</th>
+  <th>TotalEsps</th>
+  <th>TotalNonEsps</th>
+  <th>CategorieDeclaration</th>
+  <th>ComptableDeclarant</th>
+  <th>ComptableVerifiant</th>
+  <th>Societe</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of demandeDeclarations; index as i">
+    <td>{{df.ref}}</td>
+    <td>{{df.dateDeclaration}}</td>
+    <td>{{df.totalPaye}}</td>
+    <td>{{df.total}}</td>
+    <td>{{df.totalEsps}}</td>
+    <td>{{df.totalNonEsps}}</td>
+    <td>{{df.categorieDeclaration}}</td>
+    <td>{{df.comptableDeclarant}}</td>
+    <td>{{df.comptableVerifiant}}</td>
+    <td>{{df.Societe}}</td>
+    <td><span (click)="deleteByRef(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

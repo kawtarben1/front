@@ -1,0 +1,20 @@
+<table class="table table-bordered table-hover" *ngIf="tauxIRs.length !=0">
+  <thead>
+  <th>libelle</th>
+  <th>pourcentage</th>
+  <th>salaireMin</th>
+  <th>salaireMax</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let df of tauxIRs; index as i">
+    <td>{{df.libelle}}</td>
+    <td>{{df.pourcentage}}</td>
+    <td>{{df.salaireMin}}</td>
+    <td>{{df.salaireMax}}</td>
+    <td><span (click)="deleteByLibelle(df, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

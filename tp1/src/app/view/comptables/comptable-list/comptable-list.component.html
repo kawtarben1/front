@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover" *ngIf="comptables.length !=0">
+  <thead>
+  <th>CIN</th>
+  <th>Nom</th>
+  <th>Prenom</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of comptables ; index as i ">
+    <td>{{c.cin}}</td>
+    <td>{{c.nom}}</td>
+    <td>{{c.prenom}}</td>
+    <td><span (click)="deleteByCin(c, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

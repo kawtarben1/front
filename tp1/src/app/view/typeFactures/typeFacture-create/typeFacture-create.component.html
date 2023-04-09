@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header">Creation TypeFacture</div>
+  <div class="card-body">
+
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input id="libelle" type="text" class="form-control"  [(ngModel)]="typeFacture.libelle">
+    </div>
+
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input id="code" type="text" class="form-control"  [(ngModel)]="typeFacture.code">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

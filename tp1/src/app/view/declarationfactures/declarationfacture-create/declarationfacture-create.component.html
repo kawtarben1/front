@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-header">Creation DeclarationFacture</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="reference">Reference</label>
+      <input id="reference" type="text" class="form-control"  [(ngModel)]="declarationfacture.ref">
+    </div>
+
+
+    <div class="form-group">
+      <label for="demandedeclaration">Demande Declaration</label>
+      <input id="demandedeclaration" type="text" class="form-control"  [(ngModel)]="declarationfacture.demandeDeclaration">
+    </div>
+
+    <div class="form-group">
+      <label for="montantTtc">Montant TTC</label>
+      <input id="montantTtc" type="text" class="form-control"  [(ngModel)]="declarationfacture.montantTTC">
+    </div>
+
+    <div class="form-group">
+      <label for="tva">TVA</label>
+      <input id="tva" type="text" class="form-control"  [(ngModel)]="declarationfacture.tva">
+    </div>
+
+    <div class="form-group">
+      <label for="montantHt">Montant HT</label>
+      <input id="montantHt" type="text" class="form-control"  [(ngModel)]="declarationfacture.montantHT">
+    </div>
+
+    <div class="form-group">
+      <label for="dateFacture">Date Facture</label>
+      <input id="dateFacture" type="text" class="form-control"  [(ngModel)]="declarationfacture.dateFacture">
+    </div>
+
+    <div class="form-group">
+      <label for="typeFacture">Type Facture</label>
+      <input id="typeFacture" type="text" class="form-control"  [(ngModel)]="declarationfacture.typeFacture">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>
+

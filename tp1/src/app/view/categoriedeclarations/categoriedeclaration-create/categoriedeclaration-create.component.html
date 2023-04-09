@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">Creation CategorieDeclaration</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input id="code" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.code">
+    </div>
+
+
+    <div class="form-group">
+      <label for="DateMin">Date Min</label>
+      <input id="DateMin" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.dateMin">
+    </div>
+
+    <div class="form-group">
+      <label for="DateMax">Date Max</label>
+      <input id="DateMax" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.dateMax">
+    </div>
+    <div class="form-group">
+      <label for="PrixParFacture">Prix Par Facture</label>
+      <input id="PrixParFacture" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.prixParFac">
+    </div>
+
+    <div class="form-group">
+      <label for="Libelle">Libelle</label>
+      <input id="Libelle" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.libelle">
+    </div>
+
+
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>
+

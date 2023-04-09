@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover" *ngIf="categoriedeclarations.length !=0">
+  <thead>
+  <th>Code</th>
+  <th>Date Min</th>
+  <th>Date Max</th>
+  <th>Prix Par Facture</th>
+  <th>Libelle</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cd of categoriedeclarations ; index as i">
+    <td>{{cd.code}}</td>
+    <td>{{cd.dateMin}}</td>
+    <td>{{cd.dateMax}}</td>
+    <td>{{cd.prixParFac}}</td>
+    <td>{{cd.libelle}}</td>
+    <td><span (click)="deleteByCode(cd, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
+
+

@@ -1,0 +1,62 @@
+<div class="card">
+  <div class="card-header">Creation DemandeDeclaration</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="ref">Ref</label>
+      <input id="ref" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.ref">
+    </div>
+
+
+    <div class="form-group">
+      <label for="dateDeclaration">DateDeclaration </label>
+      <input id="dateDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.dateDeclaration">
+    </div>
+
+    <div class="form-group">
+      <label for="totalPaye">TotalPaye</label>
+      <input id="totalPaye" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalPaye">
+    </div>
+
+    <div class="form-group">
+      <label for="total">Total</label>
+      <input id="total" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.total">
+    </div>
+
+    <div class="form-group">
+      <label for="totalEsps">TotalEspece</label>
+      <input id="totalEsps" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalEsps">
+    </div>
+
+    <div class="form-group">
+      <label for="totalNonEsps">TotalNonEspece</label>
+      <input id="totalNonEsps" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalNonEsps">
+    </div>
+
+    <div class="form-group">
+      <label for="categorieDeclaration">CategorieDeclaration</label>
+      <input id="categorieDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.categorieDeclaration">
+    </div>
+
+    <div class="form-group">
+      <label for="comptableDeclarant">DomptableDeclarant</label>
+      <input id="comptableDeclarant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableDeclarant">
+    </div>
+
+    <div class="form-group">
+      <label for="comptableVerifiant">ComptableVerifiant</label>
+      <input id="comptableVerifiant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableVerifiant">
+    </div>
+
+    <div class="form-group">
+      <label for="Societe">Societe</label>
+      <input id="Societe" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.Societe">
+    </div>
+
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">Creation Le Comptable</div>
+  <div class="card-body">
+
+
+    <div class="form-group">
+      <label for="cin">CIN</label>
+      <input id="cin" type="text" class="form-control"  [(ngModel)]="comptable.cin">
+    </div>
+
+
+    <div class="form-group">
+      <label for="Nom">Nom</label>
+      <input id="Nom" type="text" class="form-control"  [(ngModel)]="comptable.nom">
+    </div>
+
+    <div class="form-group">
+      <label for="Prenom">Prenom</label>
+      <input id="Prenom" type="text" class="form-control"  [(ngModel)]="comptable.prenom">
+    </div>
+
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-success" (click)="save()">Valider</button>
+  </div>
+</div>
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Responsive Navbar</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    /* Style for the navbar brand */
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    /* Style for the back-to-top button */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a class="navbar-brand" href="#">My Website</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#section1">categorieComptable</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section2">categoriedeclaration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section3">categoriesociete</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section4">comptable</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section5">declarationfacture</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section6">etatDeclaration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section7">employe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section8">paymentDeclaration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section9">declarationIR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section10">declarationIRdetailles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section11">demandeDeclaration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section12">demandeDeclarationDetailles</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section13">societe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section14">tauxIR</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section15">typeFacture</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#section16">typePayment</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="section1" class="col-md-6">
+  <app-categorieComptable-create>
+  </app-categorieComptable-create>
+</div>
+<div class="col-md-6">
+  <app-categorieComptable-list>
+  </app-categorieComptable-list>
+</div>
+
+<div id="section2" class="col-md-6">
+  <app-categoriedeclaration-create>
+  </app-categoriedeclaration-create>
+</div>
+<div class="col-md-6">
+  <app-categoriedeclaration-list>
+  </app-categoriedeclaration-list>
+</div>
+
+<div id="section3" class="col-md-6">
+  <app-categoriesociete-create>
+  </app-categoriesociete-create>
+</div>
+<div class="col-md-6">
+  <app-categoriesociete-list>
+  </app-categoriesociete-list>
+</div>
+<div id="section4" class="col-md-6">
+  <app-comptable-create>
+  </app-comptable-create>
+</div>
+<div class="col-md-6">
+  <app-comptable-list>
+  </app-comptable-list>
+</div>
+<div id="section5" class="col-md-6">
+  <app-declarationfacture-create>
+  </app-declarationfacture-create>
+</div>
+<div class="col-md-6">
+  <app-declarationfacture-list>
+  </app-declarationfacture-list>
+</div>
+<div id="section6" class="col-md-6">
+  <app-etatDeclaration-create>
+  </app-etatDeclaration-create>
+</div>
+<div class="col-md-6">
+  <app-etatDeclaration-list>
+  </app-etatDeclaration-list>
+</div>
+<div id="section7" class="col-md-6">
+  <app-employe-create>
+  </app-employe-create>
+</div>
+<div class="col-md-6">
+  <app-employe-list>
+  </app-employe-list>
+</div>
+<div id="section8" class="col-md-6">
+  <app-paymentDeclaration-create>
+  </app-paymentDeclaration-create>
+</div>
+<div class="col-md-6">
+  <app-paymentDeclaration-list>
+  </app-paymentDeclaration-list>
+</div>
+<div id="section9" class="col-md-6">
+  <app-declarationIR-create>
+  </app-declarationIR-create>
+</div>
+<div class="col-md-6">
+  <app-declarationIR-list>
+  </app-declarationIR-list>
+</div>
+<div id="section10" class="col-md-6">
+  <app-declarationIRdetailles-create>
+  </app-declarationIRdetailles-create>
+</div>
+<div class="col-md-6">
+  <app-declarationIRdetailles-list>
+  </app-declarationIRdetailles-list>
+</div>
+<div id="section11" class="col-md-6">
+  <app-demandeDeclaration-create>
+  </app-demandeDeclaration-create>
+</div>
+<div class="col-md-6">
+  <app-demandeDeclaration-list>
+  </app-demandeDeclaration-list>
+</div>
+<div id="section12" class="col-md-6">
+  <app-demandeDeclarationDetailles-create>
+  </app-demandeDeclarationDetailles-create>
+</div>
+<div class="col-md-6">
+  <app-demandeDeclarationDetailles-list>
+  </app-demandeDeclarationDetailles-list>
+</div>
+<div id="section13" class="col-md-6">
+  <app-societe-create>
+  </app-societe-create>
+</div>
+<div class="col-md-6">
+  <app-societe-list>
+  </app-societe-list>
+</div>
+<div id="section14" class="col-md-6">
+  <app-tauxIR-create>
+  </app-tauxIR-create>
+</div>
+<div class="col-md-6">
+  <app-tauxIR-list>
+  </app-tauxIR-list>
+</div>
+<div id="section15" class="col-md-6">
+  <app-typeFacture-create>
+  </app-typeFacture-create>
+</div>
+<div class="col-md-6">
+  <app-typeFacture-list>
+  </app-typeFacture-list>
+</div>
+<div id="section16" class="col-md-6">
+  <app-typePayment-create>
+  </app-typePayment-create>
+</div>
+<div class="col-md-6">
+  <app-typePayment-list>
+  </app-typePayment-list>
+</div>
+
+
+
+<!-- Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
+

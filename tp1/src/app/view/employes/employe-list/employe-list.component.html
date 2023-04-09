@@ -1,0 +1,16 @@
+<table class="table table-bordered table-hover" *ngIf="employes.length !=0" >
+  <thead>
+  <th>Nom</th>
+  <th>Prenom</th>
+  <th>Cin</th>
+  <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cc of employes; index as i ">
+    <td>{{cc.nom}}</td>
+    <td>{{cc.prenom}}</td>
+    <td>{{cc.cin}}</td>
+    <td><span (click)="deleteByCin(cc, i)" class="fa fa-trash btn btn-sm"></span></td>
+  </tr>
+  </tbody>
+</table>
