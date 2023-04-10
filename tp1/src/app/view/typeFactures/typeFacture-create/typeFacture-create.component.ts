@@ -18,7 +18,7 @@ export class TypeFactureCreateComponent implements OnInit{
         this.typeFactures.push({...this.typeFacture});
         alert('SAVE SUCCESS');
       } else {
-        alert('SAVE ERROR ::: CIN EXIST');
+        alert('SAVE ERROR ::: CODE EXIST');
       }
     });
   }

@@ -14,7 +14,7 @@ export class TypeFactureService {
     return this.http.post<TypeFacture>(this.url, this.typeFacture);
   }
 
-  public deleteByCode() : Observable<number>{
+  public deleteByCode(code: string) : Observable<number>{
     console.log('url==>' + this.url + 'code/' + this.typeFacture.code);
     return this.http.delete<number>(this.url +'code/' + this.typeFacture.code);
   }

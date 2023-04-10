@@ -1,3 +1,8 @@
+<section id="hero" style="background-image: url('assets/image/photo.jpg')">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+<br>
+<br>
+    <div class="container" style="width: 400px">
 <div class="card">
   <div class="card-header">Creation TauxIR</div>
   <div class="card-body">
@@ -9,18 +14,18 @@
 
     <div class="form-group">
       <label for="pourcentage">Pourcentage</label>
-      <input id="pourcentage" type="text" class="form-control"  [(ngModel)]="tauxIR.pourcentage">
+      <input id="pourcentage" type="number" class="form-control"  [(ngModel)]="tauxIR.pourcentage">
     </div>
 
 
     <div class="form-group">
       <label for="salaireMin">SalaireMin </label>
-      <input id="salaireMin" type="text" class="form-control"  [(ngModel)]="tauxIR.salaireMin">
+      <input id="salaireMin" type="number" class="form-control"  [(ngModel)]="tauxIR.salaireMin">
     </div>
 
     <div class="form-group">
       <label for="salaireMax">SalaireMax</label>
-      <input id="salaireMax" type="text" class="form-control"  [(ngModel)]="tauxIR.salaireMax">
+      <input id="salaireMax" type="number" class="form-control"  [(ngModel)]="tauxIR.salaireMax">
     </div>
 
   </div>
@@ -28,4 +33,9 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
-<app-tauxIR-list></app-tauxIR-list>
+      <br>
+    </div>
+    <app-tauxIR-list></app-tauxIR-list>
+  </div>
+
+</section>

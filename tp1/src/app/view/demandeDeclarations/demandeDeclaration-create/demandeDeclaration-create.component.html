@@ -1,3 +1,8 @@
+<section id="hero" style="background-image: url('assets/image/photo.jpg')">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <br>
+    <br>
+    <div class="container" style="width: 400px">
 <div class="card">
   <div class="card-header">Creation DemandeDeclaration</div>
   <div class="card-body">
@@ -11,27 +16,27 @@
 
     <div class="form-group">
       <label for="dateDeclaration">DateDeclaration </label>
-      <input id="dateDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.dateDeclaration">
+      <input id="dateDeclaration" type="date" class="form-control"  [(ngModel)]="demandeDeclaration.dateDeclaration">
     </div>
 
     <div class="form-group">
       <label for="totalPaye">TotalPaye</label>
-      <input id="totalPaye" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalPaye">
+      <input id="totalPaye" type="number" class="form-control"  [(ngModel)]="demandeDeclaration.totalPaye">
     </div>
 
     <div class="form-group">
       <label for="total">Total</label>
-      <input id="total" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.total">
+      <input id="total" type="number" class="form-control"  [(ngModel)]="demandeDeclaration.total">
     </div>
 
     <div class="form-group">
       <label for="totalEsps">TotalEspece</label>
-      <input id="totalEsps" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalEsps">
+      <input id="totalEsps" type="number" class="form-control"  [(ngModel)]="demandeDeclaration.totalEsps">
     </div>
 
     <div class="form-group">
       <label for="totalNonEsps">TotalNonEspece</label>
-      <input id="totalNonEsps" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.totalNonEsps">
+      <input id="totalNonEsps" type="number" class="form-control"  [(ngModel)]="demandeDeclaration.totalNonEsps">
     </div>
 
     <div class="form-group">
@@ -40,7 +45,7 @@
     </div>
 
     <div class="form-group">
-      <label for="comptableDeclarant">DomptableDeclarant</label>
+      <label for="comptableDeclarant">ComptableDeclarant</label>
       <input id="comptableDeclarant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableDeclarant.cin">
     </div>
 
@@ -60,4 +65,9 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
-<app-demandeDeclaration-list></app-demandeDeclaration-list>
+      <br>
+    </div>
+    <app-demandeDeclaration-list></app-demandeDeclaration-list>
+
+  </div>
+</section>

@@ -18,7 +18,7 @@ export class TauxIRCreateComponent implements OnInit{
         this.tauxIRs.push({...this.tauxIR});
         alert('SAVE SUCCESS');
       } else {
-        alert('SAVE ERROR ::: CIN EXIST');
+        alert('SAVE ERROR ::: LIBELLE EXIST');
       }
     });
   }

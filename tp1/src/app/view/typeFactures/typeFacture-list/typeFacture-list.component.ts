@@ -23,7 +23,7 @@ export class TypeFactureListComponent implements OnInit{
   public deleteByCode(typeFacture: TypeFacture, index: number): void{
     console.log('le code ' + typeFacture.code);
     this.typeFacture = typeFacture;
-    this.typeFactureService.deleteByCode().subscribe(data =>  {
+    this.typeFactureService.deleteByCode(typeFacture.code).subscribe(data =>  {
       if(data>0){
         this.typeFactures.splice(index, 1);
       }else{

@@ -1,3 +1,8 @@
+<section id="hero" style="background-image: url('assets/image/photo.jpg')">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <br>
+    <br>
+    <div class="container" style="width: 400px">
 <div class="card">
   <div class="card-header">Creation CategorieDeclaration</div>
   <div class="card-body">
@@ -11,16 +16,16 @@
 
     <div class="form-group">
       <label for="DateMin">Date Min</label>
-      <input id="DateMin" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.dateMin">
+      <input id="DateMin" type="date" class="form-control"  [(ngModel)]="categoriedeclaration.dateMin">
     </div>
 
     <div class="form-group">
       <label for="DateMax">Date Max</label>
-      <input id="DateMax" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.dateMax">
+      <input id="DateMax" type="date" class="form-control"  [(ngModel)]="categoriedeclaration.dateMax">
     </div>
     <div class="form-group">
       <label for="PrixParFacture">Prix Par Facture</label>
-      <input id="PrixParFacture" type="text" class="form-control"  [(ngModel)]="categoriedeclaration.prixParFac">
+      <input id="PrixParFacture" type="number" class="form-control"  [(ngModel)]="categoriedeclaration.prixParFac">
     </div>
 
     <div class="form-group">
@@ -35,5 +40,9 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
+<br>
+    </div>
+    <app-categoriedeclaration-list></app-categoriedeclaration-list>
 
-<app-categoriedeclaration-list></app-categoriedeclaration-list>
+  </div>
+</section>

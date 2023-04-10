@@ -1,3 +1,8 @@
+<section id="hero" style="background-image: url('assets/image/photo.jpg')">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <br>
+    <br>
+    <div class="container" style="width: 400px">
 <div class="card">
   <div class="card-header">Creation DeclarationFacture</div>
   <div class="card-body">
@@ -16,22 +21,22 @@
 
     <div class="form-group">
       <label for="montantTtc">Montant TTC</label>
-      <input id="montantTtc" type="text" class="form-control"  [(ngModel)]="declarationfacture.montantTTC">
+      <input id="montantTtc" type="number" class="form-control"  [(ngModel)]="declarationfacture.montantTTC">
     </div>
 
     <div class="form-group">
       <label for="tva">TVA</label>
-      <input id="tva" type="text" class="form-control"  [(ngModel)]="declarationfacture.tva">
+      <input id="tva" type="number" class="form-control"  [(ngModel)]="declarationfacture.tva">
     </div>
 
     <div class="form-group">
       <label for="montantHt">Montant HT</label>
-      <input id="montantHt" type="text" class="form-control"  [(ngModel)]="declarationfacture.montantHT">
+      <input id="montantHt" type="number" class="form-control"  [(ngModel)]="declarationfacture.montantHT">
     </div>
 
     <div class="form-group">
       <label for="dateFacture">Date Facture</label>
-      <input id="dateFacture" type="text" class="form-control"  [(ngModel)]="declarationfacture.dateFacture">
+      <input id="dateFacture" type="date" class="form-control"  [(ngModel)]="declarationfacture.dateFacture">
     </div>
 
     <div class="form-group">
@@ -44,5 +49,8 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
-<app-declarationfacture-list></app-declarationfacture-list>
-
+      <br>
+    </div>
+    <app-declarationfacture-list></app-declarationfacture-list>
+  </div>
+</section>

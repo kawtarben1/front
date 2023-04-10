@@ -1,3 +1,8 @@
+<section id="hero" style="background-image: url('assets/image/photo.jpg')">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <br>
+    <br>
+    <div class="container" style="width: 400px">
 <div class="card">
   <div class="card-header">Creation PaymentDeclaration</div>
   <div class="card-body">
@@ -11,12 +16,12 @@
 
     <div class="form-group">
       <label for="montant">Montant </label>
-      <input id="montant" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.montant">
+      <input id="montant" type="number" class="form-control"  [(ngModel)]="paymentDeclaration.montant">
     </div>
 
     <div class="form-group">
       <label for="datePayment">DatePayment</label>
-      <input id="datePayment" type="text" class="form-control"  [(ngModel)]="paymentDeclaration.datePayment">
+      <input id="datePayment" type="date" class="form-control"  [(ngModel)]="paymentDeclaration.datePayment">
     </div>
 
     <div class="form-group">
@@ -34,4 +39,8 @@
     <button class="btn btn-success" (click)="save()">Valider</button>
   </div>
 </div>
-<app-paymentDeclaration-list></app-paymentDeclaration-list>
+      <br>
+    </div>
+    <app-paymentDeclaration-list></app-paymentDeclaration-list>
+  </div>
+</section>
