@@ -15,7 +15,7 @@ export class DemandeDeclaration {
   public totalNonEsps !:number;
   public comptableDeclarant = new Comptable();
   public comptableVerifiant = new Comptable();
-  public Societe = new Societe();
+  public societe = new Societe();
 }
 
 

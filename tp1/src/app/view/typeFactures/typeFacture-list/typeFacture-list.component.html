@@ -1,5 +1,6 @@
 <br>
 <div class="card">
+
 <table class="table table-bordered table-hover bg-light table"  *ngIf="typeFactures.length !=0" >
   <thead>
   <th>Code</th>
@@ -15,3 +16,24 @@
   </tbody>
 </table>
 </div>
+
+<br>
+<div class="container">
+<input class="form-control" type="text" placeholder="Search" [(ngModel)]="typeFacture">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Code</th>
+    <th>Libelle</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cc of typeFactures| search: typeFacture">
+      <td>{{cc.code}}</td>
+      <td>{{cc.libelle}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+

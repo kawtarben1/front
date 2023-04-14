@@ -40,6 +40,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {TauxIRCreateComponent} from "./view/tauxIRs/tauxIR-create/tauxIR-create.component";
 import {TauxIRListComponent} from "./view/tauxIRs/tauxIR-list/tauxIR-list.component";
 import { HomeComponent } from './view/home/home.component';
+import { SearchPipe } from './search.pipe';
 
 
 @NgModule({
@@ -78,7 +79,9 @@ import { HomeComponent } from './view/home/home.component';
     TypePaymentCreateComponent,
     TypePaymentListComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe
+
   ],
   imports: [
     BrowserModule,
