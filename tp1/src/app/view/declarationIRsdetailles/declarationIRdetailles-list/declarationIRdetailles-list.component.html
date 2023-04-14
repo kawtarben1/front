@@ -28,3 +28,33 @@
 </table>
 
 </div>
+
+<br>
+<div class="container">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="declarationIRdetailles">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Code</th>
+    <th>Employe</th>
+    <th>DeclarationIR</th>
+    <th>SalaireEmployeNet</th>
+    <th>SalaireEmployeBrute</th>
+    <th>MontantIR</th>
+    <th>TauxIR</th>
+    <th>DemandeDeclaration</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let df of declarationIRdetailless| search: declarationIRdetailles">
+      <td>{{df.code}}</td>
+      <td>{{df.employe}}</td>
+      <td>{{df.declarationIR}}</td>
+      <td>{{df.salaireEmployeNet}}</td>
+      <td>{{df.salaireEmployeBrute}}</td>
+      <td>{{df.montantIR}}</td>
+      <td>{{df.tauxIR}}</td>
+      <td>{{df.demandeDeclaration}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

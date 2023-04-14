@@ -18,5 +18,26 @@
   </tr>
   </tbody>
 </table>
-
 </div>
+  <br>
+  <div class="container">
+    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="tauxIR">
+    <table class="table table-hover table-striped bg-light table"   >
+      <thead>
+      <th>libelle</th>
+      <th>pourcentage</th>
+      <th>salaireMin</th>
+      <th>salaireMax</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let df of tauxIRs| search: tauxIR">
+        <td>{{df.libelle}}</td>
+        <td>{{df.pourcentage}}</td>
+        <td>{{df.salaireMin}}</td>
+        <td>{{df.salaireMax}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+

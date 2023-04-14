@@ -15,3 +15,21 @@
   </tbody>
 </table>
 </div>
+
+<br>
+  <div class="container">
+    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="etatdeclaration">
+    <table class="table table-hover table-striped bg-light table"   >
+      <thead>
+      <th>Code</th>
+      <th>Libelle</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let df of etatdeclarations| search: etatdeclaration">
+        <td>{{df.code}}</td>
+        <td>{{df.libelle}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

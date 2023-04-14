@@ -20,3 +20,24 @@
 </table>
 </div>
 
+<br>
+<div class="container ">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="demandeDeclarationDetailles">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Ref</th>
+    <th>PathFichier</th>
+    <th>Description</th>
+    <th>DemandeDeclaration</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let df of demandeDeclarationDetailless| search: demandeDeclarationDetailles">
+      <td>{{df.ref}}</td>
+      <td>{{df.pathFichier}}</td>
+      <td>{{df.description}}</td>
+      <td>{{df.demandeDeclaration}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

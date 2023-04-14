@@ -19,5 +19,26 @@
   </tr>
   </tbody>
 </table>
-
 </div>
+  <br>
+  <div class="container">
+    <input class="form-control" type="text" placeholder="Search" [(ngModel)]="paymentDeclaration">
+    <table class="table table-hover table-striped bg-light table"   >
+      <thead>
+      <th>Code</th>
+      <th>Montant</th>
+      <th>DatePayment</th>
+      <th>TypePayment</th>
+      <th>DemandeDeclaration</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let df of paymentDeclarations| search: paymentDeclaration">
+        <td>{{df.code}}</td>
+        <td>{{df.montant}}</td>
+        <td>{{df.datePayment}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+

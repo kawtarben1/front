@@ -16,4 +16,25 @@
   </tr>
   </tbody>
 </table>
+
 </div>
+<br>
+<div class="container">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="employe">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Cin</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let df of employes| search: employe">
+      <td>{{df.nom}}</td>
+      <td>{{df.prenom}}</td>
+      <td>{{df.cin}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
