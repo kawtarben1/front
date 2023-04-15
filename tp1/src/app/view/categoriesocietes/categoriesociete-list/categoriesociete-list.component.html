@@ -15,3 +15,20 @@
   </tbody>
 </table>
 </div>
+<br>
+<div class="container">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="categoriesociete">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Code</th>
+    <th>Libelle</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cc of categoriesocietes| search: categoriesociete">
+      <td>{{cc.code}}</td>
+      <td>{{cc.libelle}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

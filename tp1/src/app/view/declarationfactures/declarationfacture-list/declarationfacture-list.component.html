@@ -26,3 +26,30 @@
 </table>
 
 </div>
+<br>
+<div class="container">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="declarationfacture">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Reference</th>
+    <th>Demande Declaration</th>
+    <th>Montant TTC</th>
+    <th>TVA</th>
+    <th>Montant  HT</th>
+    <th>Date Facture</th>
+    <th>Type Facture</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cc of declarationfactures| search: declarationfacture">
+      <td>{{cc.ref}}</td>
+      <td>{{cc.demandeDeclaration}}</td>
+      <td>{{cc.montantTTC}}</td>
+      <td>{{cc.tva}}</td>
+      <td>{{cc.montantHT}}</td>
+      <td>{{cc.dateFacture}}</td>
+      <td>{{cc.typeFacture}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

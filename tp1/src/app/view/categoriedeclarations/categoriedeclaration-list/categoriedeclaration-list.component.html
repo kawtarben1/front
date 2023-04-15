@@ -22,3 +22,27 @@
 </table>
 
 </div>
+<br>
+<div class="container">
+  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="categoriedeclaration">
+  <table class="table table-hover table-striped bg-light table"   >
+    <thead>
+    <th>Code</th>
+    <th>Date Min</th>
+    <th>Date Max</th>
+    <th>Prix Par Facture</th>
+    <th>Libelle</th>
+    <th>Action</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cc of categoriedeclarations| search: categoriedeclaration">
+      <td>{{cc.code}}</td>
+      <td>{{cc.dateMin}}</td>
+      <td>{{cc.dateMax}}</td>
+      <td>{{cc.prixParFac}}</td>
+      <td>{{cc.libelle}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
