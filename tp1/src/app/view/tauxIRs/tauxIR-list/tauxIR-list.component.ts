@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TauxIRService} from "../../../controler/service/tauxIR.service";
+import {TauIRService} from "../../../controler/service/tau-i-r.service";
 import {TauxIR} from "../../../controler/model/tauxIR.model";
 
 @Component({
@@ -10,7 +10,7 @@ import {TauxIR} from "../../../controler/model/tauxIR.model";
 export class TauxIRListComponent implements OnInit{
 
 
-  constructor(private tauxIRService: TauxIRService) {
+  constructor(private tauxIRService: TauIRService) {
   }
   ngOnInit(): void {
     this.findAll();

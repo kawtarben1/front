@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DeclarationIRService} from "../../../controler/service/declarationIR.service";
 import {DeclarationIR} from "../../../controler/model/declarationIR.model";
+import {DeclarationIRdetailles} from "../../../controler/model/declarationIRdetailles.model";
 
 @Component({
   selector: 'app-declarationIR-create',
@@ -12,20 +13,24 @@ export class DeclarationIRCreateComponent implements OnInit{
   }
   ngOnInit(): void {
   }
-  public save(): void {
-    this.declarationIRService.save().subscribe(data => {
-      if (data != null) {
-        this.declarationIRs.push({...this.declarationIR});
-        alert('SAVE SUCCESS');
-      } else {
-        alert('SAVE ERROR ::: CIN EXIST');
-      }
-    });
+  public save(){
+    this.declarationIRService.save();
+  }
+
+  public validateSave(){
+   return this.declarationIRService.validateSave();
+  }
+  public addDeclarationIRdetailles(){
+    this.declarationIRService.addDeclarationIRdetailles();
   }
 
   get declarationIR(): DeclarationIR {
 
     return this.declarationIRService.declarationIR;
+  }
+  get declarationIRdetailles(): DeclarationIRdetailles {
+
+    return this.declarationIRService.declarationIRdetailles;
   }
 
   set declarationIR(value: DeclarationIR) {
@@ -40,4 +45,6 @@ export class DeclarationIRCreateComponent implements OnInit{
   set declarationIRs(value: Array<DeclarationIR>) {
     this.declarationIRService.declarationIRs = value;
   }
+
+
 }

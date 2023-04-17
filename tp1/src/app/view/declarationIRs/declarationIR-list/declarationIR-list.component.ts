@@ -15,16 +15,8 @@ export class DeclarationIRListComponent implements OnInit{
   public findAll(): void{
     this.declarationIRService.findAll().subscribe(data =>  this.declarationIRs = data );
   }
-  public deleteByCode(declarationIR: DeclarationIR, index: number): void{
-    console.log('le code ' + declarationIR.code);
-    this.declarationIR = declarationIR;
-    this.declarationIRService.deleteByCode().subscribe(data =>  {
-      if(data>0){
+  public delete( index: number){
         this.declarationIRs.splice(index, 1);
-      }else{
-        alert('DELETE ERROR');
-      }
-    } );
   }
   get declarationIR():DeclarationIR{
 

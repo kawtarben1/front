@@ -10,8 +10,8 @@ export class DemandeDeclarationService {
   private _demandeDeclaration !: DemandeDeclaration;
   private _demandeDeclarations!: Array<DemandeDeclaration>;
   private url = 'http://localhost:8036/api/v1/' + 'demandeDeclaration/';
-  public save() : Observable<DemandeDeclaration>{
-    return this.http.post<DemandeDeclaration>(this.url, this.demandeDeclaration);
+  public save(){
+    this.demandeDeclarations.push(this.demandeDeclaration);
   }
 
   public deleteByRef() : Observable<number>{

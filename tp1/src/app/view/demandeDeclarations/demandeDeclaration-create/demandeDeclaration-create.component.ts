@@ -12,15 +12,8 @@ export class DemandeDeclarationCreateComponent implements OnInit{
   }
   ngOnInit(): void {
   }
-  public save(): void {
-    this.demandeDeclarationService.save().subscribe(data => {
-      if (data != null) {
-        this.demandeDeclarations.push({...this.demandeDeclaration});
-        alert('SAVE SUCCESS');
-      } else {
-        alert('SAVE ERROR ::: CIN EXIST');
-      }
-    });
+  public save(){
+    this.demandeDeclarationService.save();
   }
 
   get demandeDeclaration(): DemandeDeclaration {

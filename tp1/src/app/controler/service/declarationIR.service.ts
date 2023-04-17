@@ -2,29 +2,42 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {DeclarationIR} from "../model/declarationIR.model";
+import {DeclarationIRdetailles} from "../model/declarationIRdetailles.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeclarationIRService {
   private _declarationIR !: DeclarationIR;
+  private _declarationIRdetailles !: DeclarationIRdetailles;
   private _declarationIRs!: Array<DeclarationIR>;
-  private url = 'http://localhost:8036/api/v1/' + 'declarationIR/';
-  public save() : Observable<DeclarationIR>{
-    return this.http.post<DeclarationIR>(this.url, this.declarationIR);
+  private _url = 'http://localhost:8036/api/v1/' + 'declarationIR/';
+
+  public addDeclarationIRdetailles(){
+    this.declarationIR.totalTaxe+= this.declarationIRdetailles.montantIR;
+    this.declarationIR.salaireTotalNet+= this.declarationIRdetailles.salaireEmployeNet;
+    this.declarationIR.salaireTotalBrute+= this.declarationIRdetailles.salaireEmployeBrute;
+    this.declarationIR.declarationIRdetailles.push(this.declarationIRdetailles);
+  }
+  public save(){
+    this.declarationIRs.push(this.declarationIR);
+  }
+
+  public validateSave(): boolean {
+    return this.declarationIR.code != null && this.declarationIR.declarationIRdetailles.length > 0;
   }
 
   public deleteByCode() : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.declarationIR.code);
-    return this.http.delete<number>(this.url +'code/' + this.declarationIR.code);
+    console.log('url==>' + this._url + 'code/' + this.declarationIR.code);
+    return this._http.delete<number>(this._url +'code/' + this.declarationIR.code);
   }
 
 
   public findAll() : Observable<Array<DeclarationIR>>{
-    return this.http.get<Array<DeclarationIR>>(this.url);
+    return this._http.get<Array<DeclarationIR>>(this._url);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get declarationIR(): DeclarationIR {
@@ -49,4 +62,34 @@ export class DeclarationIRService {
   set declarationIRs(value: Array<DeclarationIR>) {
     this._declarationIRs = value;
   }
+
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+  get declarationIRdetailles(): DeclarationIRdetailles {
+    if (this._declarationIRdetailles == null){
+      this._declarationIRdetailles = new DeclarationIRdetailles();
+    }
+    return this._declarationIRdetailles;
+  }
+
+  set declarationIRdetailles(value: DeclarationIRdetailles) {
+    this._declarationIRdetailles = value;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+
 }

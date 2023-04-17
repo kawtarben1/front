@@ -10,8 +10,8 @@ export class PaymentDeclarationService {
   private _paymentDeclaration !: PaymentDeclaration;
   private _paymentDeclarations!: Array<PaymentDeclaration>;
   private url = 'http://localhost:8036/api/v1/' + 'paymentDeclaration/';
-  public save() : Observable<PaymentDeclaration>{
-    return this.http.post<PaymentDeclaration>(this.url, this.paymentDeclaration);
+  public save(){
+    this.paymentDeclarations.push(this.paymentDeclaration);
   }
 
   public deleteByCode() : Observable<number>{

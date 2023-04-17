@@ -12,15 +12,8 @@ export class PaymentDeclarationCreateComponent implements OnInit{
   }
   ngOnInit(): void {
   }
-  public save(): void {
-    this.paymentDeclarationService.save().subscribe(data => {
-      if (data != null) {
-        this.paymentDeclarations.push({...this.paymentDeclaration});
-        alert('SAVE SUCCESS');
-      } else {
-        alert('SAVE ERROR ::: CIN EXIST');
-      }
-    });
+  public save(){
+    this.paymentDeclarationService.save();
   }
 
   get paymentDeclaration(): PaymentDeclaration {

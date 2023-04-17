@@ -6,7 +6,7 @@ import {TauxIR} from "../model/tauxIR.model";
 @Injectable({
   providedIn: 'root'
 })
-export class TauxIRService {
+export class TauIRService {
   private _tauxIR!: TauxIR;
   private _tauxIRs!: Array<TauxIR>;
   private url = 'http://localhost:8036/api/v1/' + 'tauxIR/';

@@ -2,7 +2,7 @@
   <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
     <br>
     <br>
-    <div class="container" style="width: 400px">
+    <div class="container" >
 <div class="card">
   <div class="card-header">Creation DeclarationIR</div>
   <div class="card-body">
@@ -15,34 +15,82 @@
 
 
     <div class="form-group">
-      <label for="totalTaxe">TotalTaxe </label>
-      <input id="totalTaxe" type="number" class="form-control"  [(ngModel)]="declarationIR.totalTaxe">
-    </div>
-
-    <div class="form-group">
-      <label for="salaireTotalNet">SalaireTotalNet</label>
-      <input id="salaireTotalNet" type="number" class="form-control"  [(ngModel)]="declarationIR.salaireTotalNet">
-    </div>
-
-    <div class="form-group">
-      <label for="salaireTotalBrute">SalaireTotalBrute</label>
-      <input id="salaireTotalBrute" type="number" class="form-control"  [(ngModel)]="declarationIR.salaireTotalBrute">
-    </div>
-
-    <div class="form-group">
       <label for="date">Date</label>
       <input id="date" type="date" class="form-control"  [(ngModel)]="declarationIR.date">
     </div>
-
-    <div class="form-group">
-      <label for="declarationIRdetailles">DeclarationIRdetailles </label>
-      <input id="declarationIRdetailles" type="text" class="form-control"  [(ngModel)]="declarationIR.declarationIRdetailles">
+    <br>
+<div class="card">
+  <div class="card-header">Ajouer</div>
+  <div class="card-body">
+  <div class="row">
+    <div class="col-md-12"><label>code</label>
+      <input type="text" class="form-control" [(ngModel)]="declarationIRdetailles.code">
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"><label>salaireEmployeNet</label>
+      <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.salaireEmployeNet">
+    </div>
+    <div class="col-md-4"><label>salaireEmployeBrute</label>
+      <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.salaireEmployeBrute">
+    </div>
+    <div class="col-md-4"><label>montantIR</label>
+      <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.montantIR">
+    </div>
+  </div>
+
+
+</div>
+  <div class="card-footer">
+    <button class="btn btn-outline-danger  " (click)="addDeclarationIRdetailles()">+</button>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+    <div class="card">
+  <div class="card-header">Liste</div>
+ <div class="card-body">
+
+   <table class="table table-bordered table-hover">
+     <thead>
+     <th>Code</th>
+     <th>MontantIR</th>
+     <th>SalaireEmployeNet</th>
+     <th>SalaireEmployeBrute</th>
+     <th>Action</th>
+     </thead>
+     <tbody>
+     <tr *ngFor="let df of declarationIR.declarationIRdetailles">
+       <td>{{df.code}}</td>
+       <td>{{df.montantIR}}</td>
+       <td>{{df.salaireEmployeNet}}</td>
+       <td>{{df.salaireEmployeBrute}}</td>
+
+     </tr>
+     </tbody>
+   </table>  </div>
+  <div class="card-footer">
+    TotalTaxe : {{declarationIR.totalTaxe}}
+    <br>
+    SalaireTotalNet : {{declarationIR.salaireTotalNet}}
+    <br>
+    SalaireTotalBrute : {{declarationIR.salaireTotalBrute}}
+  </div>
+
+</div>
+
 
 
   </div>
   <div class="card-footer">
-    <button class="btn" style="background-color: lightsalmon" (click)="save()">Ajouter</button>
+    <button class="btn btn-info" style="background-color: lightsalmon" (click)="save()" [disabled]="!validateSave()">Ajouter</button>
   </div>
 </div>
       <br>
