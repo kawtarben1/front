@@ -1,5 +1,5 @@
 export class TypeFacture {
-  public id!:number;
+  public type_facture_id!:number;
   public libelle! :string ;
   public  code!:string ;
 }

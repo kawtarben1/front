@@ -7,18 +7,18 @@ import {DeclarationIRdetaillesService} from "../../../controler/service/declarat
   styleUrls: ['./declarationIRdetailles-list.component.css']
 })
 export class DeclarationIRdetaillesListComponent implements OnInit{
-  constructor(private declarationIRdetaillesService: DeclarationIRdetaillesService) {
+  constructor(private _declarationIRdetaillesService: DeclarationIRdetaillesService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
   public findAll(): void{
-    this.declarationIRdetaillesService.findAll().subscribe(data =>  this.declarationIRdetailless = data );
+    this._declarationIRdetaillesService.findAll().subscribe(data =>  this.declarationIRdetailless = data );
   }
   public deleteByCode(declarationIRdetailles: DeclarationIRdetailles, index: number): void{
     console.log('le code ' + declarationIRdetailles.code);
     this.declarationIRdetailles = declarationIRdetailles;
-    this.declarationIRdetaillesService.deleteByCode().subscribe(data =>  {
+    this._declarationIRdetaillesService.deleteByCode().subscribe(data =>  {
       if(data>0){
         this.declarationIRdetailless.splice(index, 1);
       }else{
@@ -28,20 +28,27 @@ export class DeclarationIRdetaillesListComponent implements OnInit{
   }
   get declarationIRdetailles():DeclarationIRdetailles{
 
-    return this.declarationIRdetaillesService.declarationIRdetailles;
+    return this._declarationIRdetaillesService.declarationIRdetailles;
   }
 
   set declarationIRdetailles(value: DeclarationIRdetailles) {
-    this.declarationIRdetaillesService.declarationIRdetailles = value;
+    this._declarationIRdetaillesService.declarationIRdetailles = value;
   }
 
   get declarationIRdetailless(): Array<DeclarationIRdetailles> {
 
-    return this.declarationIRdetaillesService.declarationIRdetailless;
+    return this._declarationIRdetaillesService.declarationIRdetailless;
   }
 
   set declarationIRdetailless(value: Array<DeclarationIRdetailles>) {
-    this.declarationIRdetaillesService.declarationIRdetailless = value;
+    this._declarationIRdetaillesService.declarationIRdetailless = value;
   }
 
+  get declarationIRdetaillesService(): DeclarationIRdetaillesService {
+    return this._declarationIRdetaillesService;
+  }
+
+  set declarationIRdetaillesService(value: DeclarationIRdetaillesService) {
+    this._declarationIRdetaillesService = value;
+  }
 }

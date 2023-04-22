@@ -1,5 +1,5 @@
 export class TypePayment {
-  public id!:number;
+  public type_payment_id!:number;
   public libelle! :string ;
   public  code!:string ;
 }

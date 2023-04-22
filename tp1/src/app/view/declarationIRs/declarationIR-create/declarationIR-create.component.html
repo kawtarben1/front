@@ -2,7 +2,7 @@
   <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
     <br>
     <br>
-    <div class="container" >
+    <div class="container" style="width: 800px" >
 <div class="card">
   <div class="card-header">Creation DeclarationIR</div>
   <div class="card-body">
@@ -38,8 +38,15 @@
       <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.montantIR">
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-6"><label>tauxIR</label>
+      <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.tauxIR.tauxir_id">
+    </div>
 
-
+    <div class="col-md-6"><label>employe</label>
+      <input type="number" class="form-control" [(ngModel)]="declarationIRdetailles.employe.employe_id">
+    </div>
+  </div>
 </div>
   <div class="card-footer">
     <button class="btn btn-outline-danger  " (click)="addDeclarationIRdetailles()">+</button>
@@ -49,7 +56,7 @@
 
 
 
-
+<br>
 
 
 
@@ -61,18 +68,21 @@
    <table class="table table-bordered table-hover">
      <thead>
      <th>Code</th>
+     <th>Employe</th>
      <th>MontantIR</th>
      <th>SalaireEmployeNet</th>
      <th>SalaireEmployeBrute</th>
+     <th>TauxIR</th>
      <th>Action</th>
      </thead>
      <tbody>
      <tr *ngFor="let df of declarationIR.declarationIRdetailles">
        <td>{{df.code}}</td>
+       <td>{{df.employe}}</td>
        <td>{{df.montantIR}}</td>
        <td>{{df.salaireEmployeNet}}</td>
        <td>{{df.salaireEmployeBrute}}</td>
-
+       <td>{{df.tauxIR}}</td>
      </tr>
      </tbody>
    </table>  </div>

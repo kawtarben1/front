@@ -3,6 +3,9 @@ import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {DeclarationIR} from "../model/declarationIR.model";
 import {DeclarationIRdetailles} from "../model/declarationIRdetailles.model";
+import {DemandeDeclaration} from "../model/demandeDeclaration.model";
+import { TauxIR } from '../model/tauxIR.model';
+import { Employe } from '../model/employe.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +22,8 @@ export class DeclarationIRService {
     this.declarationIR.salaireTotalBrute+= this.declarationIRdetailles.salaireEmployeBrute;
     this.declarationIR.declarationIRdetailles.push(this.declarationIRdetailles);
   }
-  public save(){
-    this.declarationIRs.push(this.declarationIR);
+  public save() : Observable<DeclarationIR>{
+    return this._http.post<DeclarationIR>(this._url, this.declarationIR);
   }
 
   public validateSave(): boolean {
@@ -82,6 +85,7 @@ export class DeclarationIRService {
   set declarationIRdetailles(value: DeclarationIRdetailles) {
     this._declarationIRdetailles = value;
   }
+
 
   get url(): string {
     return this._url;

@@ -1,5 +1,5 @@
 export class CategorieSociete {
-  public id !:number ;
+  public categorie_societe_id !:number ;
   public libelle !:string ;
   public code!:string ;
 }

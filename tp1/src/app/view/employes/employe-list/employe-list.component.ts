@@ -11,20 +11,20 @@ import {Employe} from "../../../controler/model/employe.model";
 export class EmployeListComponent implements OnInit{
 
 
-  constructor(private employeService: EmployeService) {
+  constructor(private _employeService: EmployeService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.employeService.findAll().subscribe(data =>  this.employes = data );
+    this._employeService.findAll().subscribe(data =>  this.employes = data );
   }
 
   public deleteByCin(employe: Employe, index: number): void{
     console.log('le cin ' + employe.cin);
     this.employe = employe;
-    this.employeService.deleteByCin().subscribe(data =>  {
+    this._employeService.deleteByCin().subscribe(data =>  {
       if(data>0){
         this.employes.splice(index, 1);
       }else{
@@ -35,20 +35,28 @@ export class EmployeListComponent implements OnInit{
 
   get employe(): Employe {
 
-    return this.employeService.employe;
+    return this._employeService.employe;
   }
 
   set employe(value: Employe) {
-    this.employeService.employe = value;
+    this._employeService.employe = value;
   }
 
   get employes(): Array<Employe> {
 
-    return this.employeService.employes;
+    return this._employeService.employes;
   }
 
   set employes(value: Array<Employe>) {
-    this.employeService.employes = value;
+    this._employeService.employes = value;
+  }
+
+  get employeService(): EmployeService {
+    return this._employeService;
+  }
+
+  set employeService(value: EmployeService) {
+    this._employeService = value;
   }
 
 }

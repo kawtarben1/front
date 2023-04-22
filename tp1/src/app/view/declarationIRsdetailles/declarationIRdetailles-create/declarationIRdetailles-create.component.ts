@@ -8,12 +8,12 @@ import {DeclarationIRdetailles} from "../../../controler/model/declarationIRdeta
   styleUrls: ['./declarationIRdetailles-create.component.css']
 })
 export class DeclarationIRdetaillesCreateComponent implements OnInit{
-  constructor(private declarationIRdetaillesService: DeclarationIRdetaillesService) {
+  constructor(private _declarationIRdetaillesService: DeclarationIRdetaillesService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.declarationIRdetaillesService.save().subscribe(data => {
+    this._declarationIRdetaillesService.save().subscribe(data => {
       if (data != null) {
         this.declarationIRdetailless.push({...this.declarationIRdetailles});
         alert('SAVE SUCCESS');
@@ -25,20 +25,27 @@ export class DeclarationIRdetaillesCreateComponent implements OnInit{
 
   get declarationIRdetailles(): DeclarationIRdetailles {
 
-    return this.declarationIRdetaillesService.declarationIRdetailles;
+    return this._declarationIRdetaillesService.declarationIRdetailles;
   }
 
   set declarationIRdetailles(value: DeclarationIRdetailles) {
-    this.declarationIRdetaillesService.declarationIRdetailles = value;
+    this._declarationIRdetaillesService.declarationIRdetailles = value;
   }
 
   get declarationIRdetailless(): Array<DeclarationIRdetailles> {
 
-    return this.declarationIRdetaillesService.declarationIRdetailless;
+    return this._declarationIRdetaillesService.declarationIRdetailless;
   }
 
   set declarationIRdetailless(value: Array<DeclarationIRdetailles>) {
-    this.declarationIRdetaillesService.declarationIRdetailless = value;
+    this._declarationIRdetaillesService.declarationIRdetailless = value;
   }
 
+  get declarationIRdetaillesService(): DeclarationIRdetaillesService {
+    return this._declarationIRdetaillesService;
+  }
+
+  set declarationIRdetaillesService(value: DeclarationIRdetaillesService) {
+    this._declarationIRdetaillesService = value;
+  }
 }

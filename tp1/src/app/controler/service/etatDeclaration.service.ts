@@ -10,20 +10,20 @@ import {HttpClient} from "@angular/common/http";
 export class EtatDeclarationService {
   private _etatDeclaration !: EtatDeclaration;
   private _etatDeclarations!: Array<EtatDeclaration>;
-  private url = 'http://localhost:8036/api/v1/' + 'etatdeclaration/';
+  private _url = 'http://localhost:8036/api/v1/' + 'etatdeclaration/';
   public save() : Observable<EtatDeclaration>{
-    return this.http.post<EtatDeclaration>(this.url, this.etatdeclaration);
+    return this._http.post<EtatDeclaration>(this._url, this.etatdeclaration);
   }
 
   public deleteByCode() : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.etatdeclaration.code);
-    return this.http.delete<number>(this.url +'code/' + this.etatdeclaration.code);
+    console.log('url==>' + this._url + 'code/' + this.etatdeclaration.code);
+    return this._http.delete<number>(this._url +'code/' + this.etatdeclaration.code);
   }
 
   public findAll() : Observable<Array<EtatDeclaration>>{
-    return this.http.get<Array<EtatDeclaration>>(this.url);
+    return this._http.get<Array<EtatDeclaration>>(this._url);
   }
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get etatdeclaration(): EtatDeclaration {
@@ -47,6 +47,39 @@ export class EtatDeclarationService {
 
   set etatdeclarations(value: Array<EtatDeclaration>) {
     this._etatDeclarations = value;
+  }
+
+
+  get etatDeclaration(): EtatDeclaration {
+    return this._etatDeclaration;
+  }
+
+  set etatDeclaration(value: EtatDeclaration) {
+    this._etatDeclaration = value;
+  }
+
+  get etatDeclarations(): Array<EtatDeclaration> {
+    return this._etatDeclarations;
+  }
+
+  set etatDeclarations(value: Array<EtatDeclaration>) {
+    this._etatDeclarations = value;
+  }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
   }
 
 

@@ -10,20 +10,20 @@ import {DeclarationFactureService} from "src/app/controler/service/declarationFa
 })
 export class DeclarationfactureListComponent implements OnInit{
 
-  constructor(private declarationFactureService: DeclarationFactureService) {
+  constructor(private _declarationFactureService: DeclarationFactureService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.declarationFactureService.findAll().subscribe(data =>  this.declarationfactures = data );
+    this._declarationFactureService.findAll().subscribe(data =>  this.declarationfactures = data );
   }
 
   public deleteByTypeFactureref(declarationfacture: DeclarationFacture, index: number): void{
     console.log('la reference ' + declarationfacture.ref);
     this.declarationfacture = declarationfacture;
-    this.declarationFactureService.deleteByTypeFactureref().subscribe(data =>  {
+    this._declarationFactureService.deleteByTypeFactureref().subscribe(data =>  {
       if(data>0){
         this.declarationfactures.splice(index, 1);
       }else{
@@ -33,19 +33,27 @@ export class DeclarationfactureListComponent implements OnInit{
   }
   get declarationfacture():DeclarationFacture{
 
-    return this.declarationFactureService.declarationFacture;
+    return this._declarationFactureService.declarationFacture;
   }
 
   set declarationfacture(value: DeclarationFacture) {
-    this.declarationFactureService.declarationFacture = value;
+    this._declarationFactureService.declarationFacture = value;
   }
 
   get declarationfactures(): Array<DeclarationFacture> {
 
-    return this.declarationFactureService.declarationFactures;
+    return this._declarationFactureService.declarationFactures;
   }
 
   set declarationfactures(value: Array<DeclarationFacture>) {
-    this.declarationFactureService.declarationFactures = value;
+    this._declarationFactureService.declarationFactures = value;
+  }
+
+  get declarationFactureService(): DeclarationFactureService {
+    return this._declarationFactureService;
+  }
+
+  set declarationFactureService(value: DeclarationFactureService) {
+    this._declarationFactureService = value;
   }
 }

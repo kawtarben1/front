@@ -11,14 +11,14 @@ import {DeclarationFacture} from "../../../controler/model/declarationFacture.mo
 })
 export class DeclarationFactureCreateComponent implements OnInit{
 
-  constructor(private DeclarationFactureService: DeclarationFactureService) {
+  constructor(private _DeclarationFactureService: DeclarationFactureService) {
   }
 
   ngOnInit(): void {
   }
 
   public save(): void {
-    this.DeclarationFactureService.save().subscribe(data => {
+    this._DeclarationFactureService.save().subscribe(data => {
       if (data != null) {
         this.declarationfactures.push({...this.declarationfacture});
         alert('SAVE SUCCESS');
@@ -30,19 +30,27 @@ export class DeclarationFactureCreateComponent implements OnInit{
 
   get declarationfacture():DeclarationFacture{
 
-    return this.DeclarationFactureService.declarationFacture;
+    return this._DeclarationFactureService.declarationFacture;
   }
 
   set declarationfacture(value: DeclarationFacture) {
-    this.DeclarationFactureService.declarationFacture = value;
+    this._DeclarationFactureService.declarationFacture = value;
   }
 
   get declarationfactures(): Array<DeclarationFacture> {
 
-    return this.DeclarationFactureService.declarationFactures;
+    return this._DeclarationFactureService.declarationFactures;
   }
 
   set declarationfactures(value: Array<DeclarationFacture>) {
-    this.DeclarationFactureService.declarationFactures = value;
+    this._DeclarationFactureService.declarationFactures = value;
+  }
+
+  get DeclarationFactureService(): DeclarationFactureService {
+    return this._DeclarationFactureService;
+  }
+
+  set DeclarationFactureService(value: DeclarationFactureService) {
+    this._DeclarationFactureService = value;
   }
 }

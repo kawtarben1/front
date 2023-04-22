@@ -9,14 +9,14 @@ import {EtatDeclaration} from "../../../controler/model/etatDeclaration.model";
 })
 export class EtatDeclarationCreateComponent implements OnInit {
 
-  constructor(private etatDeclarationService: EtatDeclarationService) {
+  constructor(private _etatDeclarationService: EtatDeclarationService) {
   }
 
   ngOnInit(): void {
   }
 
   public save(): void {
-    this.etatDeclarationService.save().subscribe(data => {
+    this._etatDeclarationService.save().subscribe(data => {
       if (data != null) {
         this.etatdeclarations.push({...this.etatdeclaration});
 
@@ -29,20 +29,28 @@ export class EtatDeclarationCreateComponent implements OnInit {
 
   get etatdeclaration(): EtatDeclaration {
 
-    return this.etatDeclarationService.etatdeclaration;
+    return this._etatDeclarationService.etatdeclaration;
   }
 
   set etatdeclaration(value: EtatDeclaration) {
-    this.etatDeclarationService.etatdeclaration = value;
+    this._etatDeclarationService.etatdeclaration = value;
   }
 
   get etatdeclarations(): Array<EtatDeclaration> {
 
-    return this.etatDeclarationService.etatdeclarations;
+    return this._etatDeclarationService.etatdeclarations;
   }
 
   set etatdeclarations(value: Array<EtatDeclaration>) {
-    this.etatDeclarationService.etatdeclarations = value;
+    this._etatDeclarationService.etatdeclarations = value;
+  }
+
+  get etatDeclarationService(): EtatDeclarationService {
+    return this._etatDeclarationService;
+  }
+
+  set etatDeclarationService(value: EtatDeclarationService) {
+    this._etatDeclarationService = value;
   }
 
 }

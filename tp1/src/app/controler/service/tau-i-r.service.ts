@@ -47,4 +47,7 @@ export class TauIRService {
   set tauxIRs(value: Array<TauxIR>) {
     this._tauxIRs = value;
   }
+
+
+
 }

@@ -1,5 +1,5 @@
 export class EtatDeclaration {
-  public id !: number;
+  public etat_declaration_id !: number;
   public libelle !: string;
   public code !: string;
 }

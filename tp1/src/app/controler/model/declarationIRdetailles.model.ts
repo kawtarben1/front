@@ -4,7 +4,7 @@ import {Employe} from "./employe.model";
 import {DeclarationIR} from "./declarationIR.model";
 
 export class DeclarationIRdetailles {
-  public id !:number ;
+  public declarationir_detailles_id !:number ;
   public code !:string ;
   public declarationIR = new DeclarationIR() ;
   public salaireEmployeNet !:number;
@@ -13,6 +13,7 @@ export class DeclarationIRdetailles {
   public employe = new Employe();
   public tauxIR = new TauxIR();
   public demandeDeclaration = new DemandeDeclaration();
+
 }
 
 

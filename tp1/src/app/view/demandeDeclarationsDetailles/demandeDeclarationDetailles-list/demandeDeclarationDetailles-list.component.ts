@@ -8,18 +8,18 @@ import {DemandeDeclarationDetailles} from "../../../controler/model/demandeDecla
   styleUrls: ['./demandeDeclarationDetailles-list.component.css']
 })
 export class DemandeDeclarationDetaillesListComponent implements OnInit{
-  constructor(private demandeDeclarationDetaillesService: DemandeDeclarationDetaillesService) {
+  constructor(private _demandeDeclarationDetaillesService: DemandeDeclarationDetaillesService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
   public findAll(): void{
-    this.demandeDeclarationDetaillesService.findAll().subscribe(data =>  this.demandeDeclarationDetailless = data );
+    this._demandeDeclarationDetaillesService.findAll().subscribe(data =>  this.demandeDeclarationDetailless = data );
   }
   public deleteByRef(demandeDeclarationDetailles: DemandeDeclarationDetailles, index: number): void{
     console.log('la reference ' + demandeDeclarationDetailles.ref);
     this.demandeDeclarationDetailles = demandeDeclarationDetailles;
-    this.demandeDeclarationDetaillesService.deleteByRef().subscribe(data =>  {
+    this._demandeDeclarationDetaillesService.deleteByRef().subscribe(data =>  {
       if(data>0){
         this.demandeDeclarationDetailless.splice(index, 1);
       }else{
@@ -29,20 +29,27 @@ export class DemandeDeclarationDetaillesListComponent implements OnInit{
   }
   get demandeDeclarationDetailles():DemandeDeclarationDetailles{
 
-    return this.demandeDeclarationDetaillesService.demandeDeclarationDetailles;
+    return this._demandeDeclarationDetaillesService.demandeDeclarationDetailles;
   }
 
   set demandeDeclarationDetailles(value: DemandeDeclarationDetailles) {
-    this.demandeDeclarationDetaillesService.demandeDeclarationDetailles = value;
+    this._demandeDeclarationDetaillesService.demandeDeclarationDetailles = value;
   }
 
   get demandeDeclarationDetailless(): Array<DemandeDeclarationDetailles> {
 
-    return this.demandeDeclarationDetaillesService.demandeDeclarationDetailless;
+    return this._demandeDeclarationDetaillesService.demandeDeclarationDetailless;
   }
 
   set demandeDeclarationDetailless(value: Array<DemandeDeclarationDetailles>) {
-    this.demandeDeclarationDetaillesService.demandeDeclarationDetailless = value;
+    this._demandeDeclarationDetaillesService.demandeDeclarationDetailless = value;
   }
 
+  get demandeDeclarationDetaillesService(): DemandeDeclarationDetaillesService {
+    return this._demandeDeclarationDetaillesService;
+  }
+
+  set demandeDeclarationDetaillesService(value: DemandeDeclarationDetaillesService) {
+    this._demandeDeclarationDetaillesService = value;
+  }
 }

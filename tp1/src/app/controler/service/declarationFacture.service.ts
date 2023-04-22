@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {DeclarationFacture} from "../model/declarationFacture.model";
 import {HttpClient} from "@angular/common/http";
+import {TypeFacture} from "../model/typeFacture.model";
+import {DemandeDeclaration} from "../model/demandeDeclaration.model";
 
 
 
@@ -13,22 +15,22 @@ export class DeclarationFactureService {
 
   private _declarationFacture !: DeclarationFacture;
   private _declarationFactures!: Array<DeclarationFacture>;
-  private url = 'http://localhost:8036/api/v1/' + 'declarationFacture/';
+  private _url = 'http://localhost:8036/api/v1/' + 'declarationFacture/';
   public save() : Observable<DeclarationFacture>{
-    return this.http.post<DeclarationFacture>(this.url, this.declarationFacture);
+    return this._http.post<DeclarationFacture>(this._url, this.declarationFacture);
   }
 
   public deleteByTypeFactureref() : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.declarationFacture.ref);
-    return this.http.delete<number>(this.url +'ref/' + this.declarationFacture.ref);
+    console.log('url==>' + this._url + 'code/' + this.declarationFacture.ref);
+    return this._http.delete<number>(this._url +'ref/' + this.declarationFacture.ref);
   }
 
 
   public findAll() : Observable<Array<DeclarationFacture>>{
-    return this.http.get<Array<DeclarationFacture>>(this.url);
+    return this._http.get<Array<DeclarationFacture>>(this._url);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get declarationFacture(): DeclarationFacture {
@@ -54,4 +56,22 @@ export class DeclarationFactureService {
   set declarationFactures(value: Array<DeclarationFacture>) {
     this._declarationFactures = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
 }

@@ -8,18 +8,18 @@ import {DemandeDeclaration} from "../../../controler/model/demandeDeclaration.mo
   styleUrls: ['./demandeDeclaration-list.component.css']
 })
 export class DemandeDeclarationListComponent implements OnInit{
-  constructor(private demandeDeclarationService: DemandeDeclarationService) {
+  constructor(private _demandeDeclarationService: DemandeDeclarationService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
   public findAll(): void{
-    this.demandeDeclarationService.findAll().subscribe(data =>  this.demandeDeclarations = data );
+    this._demandeDeclarationService.findAll().subscribe(data =>  this.demandeDeclarations = data );
   }
   public deleteByRef(demandeDeclaration: DemandeDeclaration, index: number): void{
     console.log('la reference ' + demandeDeclaration.ref);
     this.demandeDeclaration = demandeDeclaration;
-    this.demandeDeclarationService.deleteByRef().subscribe(data =>  {
+    this._demandeDeclarationService.deleteByRef().subscribe(data =>  {
       if(data>0){
         this.demandeDeclarations.splice(index, 1);
       }else{
@@ -29,20 +29,27 @@ export class DemandeDeclarationListComponent implements OnInit{
   }
   get demandeDeclaration():DemandeDeclaration{
 
-    return this.demandeDeclarationService.demandeDeclaration;
+    return this._demandeDeclarationService.demandeDeclaration;
   }
 
   set demandeDeclaration(value: DemandeDeclaration) {
-    this.demandeDeclarationService.demandeDeclaration = value;
+    this._demandeDeclarationService.demandeDeclaration = value;
   }
 
   get demandeDeclarations(): Array<DemandeDeclaration> {
 
-    return this.demandeDeclarationService.demandeDeclarations;
+    return this._demandeDeclarationService.demandeDeclarations;
   }
 
   set demandeDeclarations(value: Array<DemandeDeclaration>) {
-    this.demandeDeclarationService.demandeDeclarations = value;
+    this._demandeDeclarationService.demandeDeclarations = value;
   }
 
+  get demandeDeclarationService(): DemandeDeclarationService {
+    return this._demandeDeclarationService;
+  }
+
+  set demandeDeclarationService(value: DemandeDeclarationService) {
+    this._demandeDeclarationService = value;
+  }
 }

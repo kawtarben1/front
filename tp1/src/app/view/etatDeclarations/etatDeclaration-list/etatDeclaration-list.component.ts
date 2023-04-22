@@ -10,20 +10,20 @@ import {EtatDeclaration} from "../../../controler/model/etatDeclaration.model";
 export class EtatDeclarationListComponent implements OnInit{
 
 
-  constructor(private etatDeclarationService: EtatDeclarationService) {
+  constructor(private _etatDeclarationService: EtatDeclarationService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.etatDeclarationService.findAll().subscribe(data =>  this.etatdeclarations = data );
+    this._etatDeclarationService.findAll().subscribe(data =>  this.etatdeclarations = data );
   }
 
   public deleteByCode(etatdeclaration: EtatDeclaration, index: number): void{
     console.log('le code ' + etatdeclaration.code);
     this.etatdeclaration = etatdeclaration;
-    this.etatDeclarationService.deleteByCode().subscribe(data =>  {
+    this._etatDeclarationService.deleteByCode().subscribe(data =>  {
       if(data>0){
         this.etatdeclarations.splice(index, 1);
       }else{
@@ -34,20 +34,27 @@ export class EtatDeclarationListComponent implements OnInit{
 
   get etatdeclaration(): EtatDeclaration {
 
-    return this.etatDeclarationService.etatdeclaration;
+    return this._etatDeclarationService.etatdeclaration;
   }
 
   set etatdeclaration(value: EtatDeclaration) {
-    this.etatDeclarationService.etatdeclaration = value;
+    this._etatDeclarationService.etatdeclaration = value;
   }
 
   get etatdeclarations(): Array<EtatDeclaration> {
 
-    return this.etatDeclarationService.etatdeclarations;
+    return this._etatDeclarationService.etatdeclarations;
   }
 
   set etatdeclarations(value: Array<EtatDeclaration>) {
-    this.etatDeclarationService.etatdeclarations = value;
+    this._etatDeclarationService.etatdeclarations = value;
   }
 
+  get etatDeclarationService(): EtatDeclarationService {
+    return this._etatDeclarationService;
+  }
+
+  set etatDeclarationService(value: EtatDeclarationService) {
+    this._etatDeclarationService = value;
+  }
 }

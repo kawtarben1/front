@@ -8,30 +8,43 @@ import {PaymentDeclaration} from "../../../controler/model/paymentDeclaration.mo
   styleUrls: ['./paymentDeclaration-create.component.css']
 })
 export class PaymentDeclarationCreateComponent implements OnInit{
-  constructor(private paymentDeclarationService: PaymentDeclarationService) {
+  constructor(private _paymentDeclarationService: PaymentDeclarationService) {
   }
   ngOnInit(): void {
   }
-  public save(){
-    this.paymentDeclarationService.save();
+  public save(): void {
+    this._paymentDeclarationService.save().subscribe(data => {
+      if (data != null) {
+        this.paymentDeclarations.push({...this.paymentDeclaration});
+        alert('SAVE SUCCESS');
+      } else {
+        alert('SAVE ERROR ::: CIN EXIST');
+      }
+    });
   }
-
   get paymentDeclaration(): PaymentDeclaration {
 
-    return this.paymentDeclarationService.paymentDeclaration;
+    return this._paymentDeclarationService.paymentDeclaration;
   }
 
   set paymentDeclaration(value: PaymentDeclaration) {
-    this.paymentDeclarationService.paymentDeclaration = value;
+    this._paymentDeclarationService.paymentDeclaration = value;
   }
 
   get paymentDeclarations(): Array<PaymentDeclaration> {
 
-    return this.paymentDeclarationService.paymentDeclarations;
+    return this._paymentDeclarationService.paymentDeclarations;
   }
 
   set paymentDeclarations(value: Array<PaymentDeclaration>) {
-    this.paymentDeclarationService.paymentDeclarations = value;
+    this._paymentDeclarationService.paymentDeclarations = value;
   }
 
+  get paymentDeclarationService(): PaymentDeclarationService {
+    return this._paymentDeclarationService;
+  }
+
+  set paymentDeclarationService(value: PaymentDeclarationService) {
+    this._paymentDeclarationService = value;
+  }
 }

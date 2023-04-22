@@ -10,20 +10,20 @@ import {PaymentDeclarationService} from "../../../controler/service/paymentDecla
 export class PaymentDeclarationListComponent implements OnInit{
 
 
-  constructor(private paymentDeclarationService: PaymentDeclarationService) {
+  constructor(private _paymentDeclarationService: PaymentDeclarationService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.paymentDeclarationService.findAll().subscribe(data =>  this.paymentDeclarations = data );
+    this._paymentDeclarationService.findAll().subscribe(data =>  this.paymentDeclarations = data );
   }
 
   public deleteByCode(paymentDeclaration: PaymentDeclaration, index: number): void{
     console.log('le code ' + paymentDeclaration.code);
     this.paymentDeclaration = paymentDeclaration;
-    this.paymentDeclarationService.deleteByCode().subscribe(data =>  {
+    this._paymentDeclarationService.deleteByCode().subscribe(data =>  {
       if(data>0){
         this.paymentDeclarations.splice(index, 1);
       }else{
@@ -34,20 +34,27 @@ export class PaymentDeclarationListComponent implements OnInit{
 
   get paymentDeclaration(): PaymentDeclaration {
 
-    return this.paymentDeclarationService.paymentDeclaration;
+    return this._paymentDeclarationService.paymentDeclaration;
   }
 
   set paymentDeclaration(value: PaymentDeclaration) {
-    this.paymentDeclarationService.paymentDeclaration = value;
+    this._paymentDeclarationService.paymentDeclaration = value;
   }
 
   get paymentDeclarations(): Array<PaymentDeclaration> {
 
-    return this.paymentDeclarationService.paymentDeclarations;
+    return this._paymentDeclarationService.paymentDeclarations;
   }
 
   set paymentDeclarations(value: Array<PaymentDeclaration>) {
-    this.paymentDeclarationService.paymentDeclarations = value;
+    this._paymentDeclarationService.paymentDeclarations = value;
   }
 
+  get paymentDeclarationService(): PaymentDeclarationService {
+    return this._paymentDeclarationService;
+  }
+
+  set paymentDeclarationService(value: PaymentDeclarationService) {
+    this._paymentDeclarationService = value;
+  }
 }

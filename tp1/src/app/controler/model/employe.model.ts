@@ -1,5 +1,5 @@
 export class Employe {
-  public id !: number;
+  public employe_id !: number;
   public nom !: string;
   public prenom !: string;
   public cin !: string;

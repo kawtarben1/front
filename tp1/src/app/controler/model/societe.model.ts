@@ -1,7 +1,7 @@
 import {CategorieSociete} from "./categorieSociete.model";
 
 export class Societe {
-  public id !:number ;
+  public societe_id !:number ;
   public ice !:string ;
   public libelle !:string ;
   public categorieSociete = new CategorieSociete() ;

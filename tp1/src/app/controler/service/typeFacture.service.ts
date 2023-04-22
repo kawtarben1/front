@@ -9,22 +9,22 @@ import {TypeFacture} from "../model/typeFacture.model";
 export class TypeFactureService {
   private _typeFacture !: TypeFacture;
   private _typeFactures!: Array<TypeFacture>;
-  private url = 'http://localhost:8036/api/v1/' + 'typeFacture/';
+  private _url = 'http://localhost:8036/api/v1/' + 'typeFacture/';
   public save() : Observable<TypeFacture>{
-    return this.http.post<TypeFacture>(this.url, this.typeFacture);
+    return this._http.post<TypeFacture>(this._url, this.typeFacture);
   }
 
   public deleteByCode(code: string) : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.typeFacture.code);
-    return this.http.delete<number>(this.url +'code/' + this.typeFacture.code);
+    console.log('url==>' + this._url + 'code/' + this.typeFacture.code);
+    return this._http.delete<number>(this._url +'code/' + this.typeFacture.code);
   }
 
 
   public findAll() : Observable<Array<TypeFacture>>{
-    return this.http.get<Array<TypeFacture>>(this.url);
+    return this._http.get<Array<TypeFacture>>(this._url);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get typeFacture(): TypeFacture {
@@ -49,4 +49,22 @@ export class TypeFactureService {
   set typeFactures(value: Array<TypeFacture>) {
     this._typeFactures = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
 }

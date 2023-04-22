@@ -9,42 +9,60 @@ import {DeclarationIRdetailles} from "../../../controler/model/declarationIRdeta
   styleUrls: ['./declarationIR-create.component.css']
 })
 export class DeclarationIRCreateComponent implements OnInit{
-  constructor(private declarationIRService: DeclarationIRService) {
+  constructor(private _declarationIRService: DeclarationIRService) {
   }
   ngOnInit(): void {
   }
-  public save(){
-    this.declarationIRService.save();
+  public save(): void {
+    this._declarationIRService.save().subscribe(data => {
+      if (data != null) {
+
+        this.declarationIRs.push({...this.declarationIR});
+
+        console.log("------->"+ this.declarationIRs);
+        alert('SAVE SUCCESS');
+      } else {
+        alert('SAVE ERROR ::: CIN EXIST');
+      }
+    });
   }
 
   public validateSave(){
-   return this.declarationIRService.validateSave();
+   return this._declarationIRService.validateSave();
   }
   public addDeclarationIRdetailles(){
-    this.declarationIRService.addDeclarationIRdetailles();
+    this._declarationIRService.addDeclarationIRdetailles();
   }
 
   get declarationIR(): DeclarationIR {
 
-    return this.declarationIRService.declarationIR;
+    return this._declarationIRService.declarationIR;
   }
   get declarationIRdetailles(): DeclarationIRdetailles {
 
-    return this.declarationIRService.declarationIRdetailles;
+    return this._declarationIRService.declarationIRdetailles;
   }
 
   set declarationIR(value: DeclarationIR) {
-    this.declarationIRService.declarationIR = value;
+    this._declarationIRService.declarationIR = value;
   }
 
   get declarationIRs(): Array<DeclarationIR> {
 
-    return this.declarationIRService.declarationIRs;
+    return this._declarationIRService.declarationIRs;
   }
 
   set declarationIRs(value: Array<DeclarationIR>) {
-    this.declarationIRService.declarationIRs = value;
+    this._declarationIRService.declarationIRs = value;
   }
 
+
+  get declarationIRService(): DeclarationIRService {
+    return this._declarationIRService;
+  }
+
+  set declarationIRService(value: DeclarationIRService) {
+    this._declarationIRService = value;
+  }
 
 }

@@ -5,7 +5,7 @@ import {Comptable} from "./comptable.model";
 import {CategorieDeclaration} from "./categorieDeclaration.model";
 
 export class DemandeDeclaration {
-  public id !:number ;
+  public demande_declaration_id !:number ;
   public ref !:string ;
   public dateDeclaration = new Date() ;
   public categorieDeclaration = new CategorieDeclaration() ;

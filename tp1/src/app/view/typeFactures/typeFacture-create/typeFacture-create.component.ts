@@ -8,12 +8,12 @@ import {TypeFacture} from "../../../controler/model/typeFacture.model";
   styleUrls: ['./typeFacture-create.component.css']
 })
 export class TypeFactureCreateComponent implements OnInit{
-  constructor(private typeFactureService: TypeFactureService) {
+  constructor(private _typeFactureService: TypeFactureService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.typeFactureService.save().subscribe(data => {
+    this._typeFactureService.save().subscribe(data => {
       if (data != null) {
         this.typeFactures.push({...this.typeFacture});
         alert('SAVE SUCCESS');
@@ -25,20 +25,27 @@ export class TypeFactureCreateComponent implements OnInit{
 
   get typeFacture(): TypeFacture {
 
-    return this.typeFactureService.typeFacture;
+    return this._typeFactureService.typeFacture;
   }
 
   set typeFacture(value: TypeFacture) {
-    this.typeFactureService.typeFacture = value;
+    this._typeFactureService.typeFacture = value;
   }
 
   get typeFactures(): Array<TypeFacture> {
 
-    return this.typeFactureService.typeFactures;
+    return this._typeFactureService.typeFactures;
   }
 
   set typeFactures(value: Array<TypeFacture>) {
-    this.typeFactureService.typeFactures = value;
+    this._typeFactureService.typeFactures = value;
   }
 
+  get typeFactureService(): TypeFactureService {
+    return this._typeFactureService;
+  }
+
+  set typeFactureService(value: TypeFactureService) {
+    this._typeFactureService = value;
+  }
 }

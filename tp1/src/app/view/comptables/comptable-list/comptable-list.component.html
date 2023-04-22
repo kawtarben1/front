@@ -5,6 +5,7 @@
   <th>CIN</th>
   <th>Nom</th>
   <th>Prenom</th>
+  <th>categorieComptable</th>
   <th>Action</th>
   </thead>
   <tbody>
@@ -12,6 +13,7 @@
     <td>{{c.cin}}</td>
     <td>{{c.nom}}</td>
     <td>{{c.prenom}}</td>
+    <td>{{c.categorieComptable}}</td>
     <td><span (click)="deleteByCin(c, i)" class="fa fa-trash btn btn-sm"></span></td>
   </tr>
   </tbody>
@@ -23,14 +25,18 @@
   <input class="form-control" type="text" placeholder="Search" [(ngModel)]="comptable">
   <table class="table table-hover table-striped bg-light table"   >
     <thead>
-    <th>Code</th>
-    <th>Libelle</th>
+    <th>Cin</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>CategorieComptable</th>
     <th>Action</th>
     </thead>
     <tbody>
     <tr *ngFor="let cc of comptables| search: comptable">
-      <td>{{cc.code}}</td>
-      <td>{{cc.libelle}}</td>
+      <td>{{cc.cin}}</td>
+      <td>{{cc.nom}}</td>
+      <td>{{cc.prenom}}</td>
+      <td>{{cc.categorieComptable}}</td>
     </tr>
     </tbody>
   </table>

@@ -1,7 +1,7 @@
 import {DeclarationIRdetailles} from "./declarationIRdetailles.model";
 
 export class DeclarationIR {
-  public id !:number ;
+  public declarationir_id !:number ;
   public code !:string ;
   public totalTaxe !:number;
   public salaireTotalNet !:number ;
@@ -15,6 +15,8 @@ export class DeclarationIR {
     this.salaireTotalNet = 0;
     this.salaireTotalBrute = 0;
   }
+
+
 }
 
 

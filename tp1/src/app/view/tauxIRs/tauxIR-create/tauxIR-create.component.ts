@@ -8,12 +8,12 @@ import {TauxIR} from "../../../controler/model/tauxIR.model";
   styleUrls: ['./tauxIR-create.component.css']
 })
 export class TauxIRCreateComponent implements OnInit{
-  constructor(private tauxIRService: TauIRService) {
+  constructor(private _tauxIRService: TauIRService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.tauxIRService.save().subscribe(data => {
+    this._tauxIRService.save().subscribe(data => {
       if (data != null) {
         this.tauxIRs.push({...this.tauxIR});
         alert('SAVE SUCCESS');
@@ -25,20 +25,27 @@ export class TauxIRCreateComponent implements OnInit{
 
   get tauxIR(): TauxIR {
 
-    return this.tauxIRService.tauxIR;
+    return this._tauxIRService.tauxIR;
   }
 
   set tauxIR(value: TauxIR) {
-    this.tauxIRService.tauxIR = value;
+    this._tauxIRService.tauxIR = value;
   }
 
   get tauxIRs(): Array<TauxIR> {
 
-    return this.tauxIRService.tauxIRs;
+    return this._tauxIRService.tauxIRs;
   }
 
   set tauxIRs(value: Array<TauxIR>) {
-    this.tauxIRService.tauxIRs = value;
+    this._tauxIRService.tauxIRs = value;
   }
 
+  get tauxIRService(): TauIRService {
+    return this._tauxIRService;
+  }
+
+  set tauxIRService(value: TauIRService) {
+    this._tauxIRService = value;
+  }
 }

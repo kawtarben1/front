@@ -10,20 +10,20 @@ import {TauxIR} from "../../../controler/model/tauxIR.model";
 export class TauxIRListComponent implements OnInit{
 
 
-  constructor(private tauxIRService: TauIRService) {
+  constructor(private _tauxIRService: TauIRService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.tauxIRService.findAll().subscribe(data =>  this.tauxIRs = data );
+    this._tauxIRService.findAll().subscribe(data =>  this.tauxIRs = data );
   }
 
   public deleteByLibelle(tauxIR: TauxIR, index: number): void{
     console.log('le libelle ' + tauxIR.libelle);
     this.tauxIR = tauxIR;
-    this.tauxIRService.deleteByLibelle().subscribe(data =>  {
+    this._tauxIRService.deleteByLibelle().subscribe(data =>  {
       if(data>0){
         this.tauxIRs.splice(index, 1);
       }else{
@@ -34,20 +34,27 @@ export class TauxIRListComponent implements OnInit{
 
   get tauxIR(): TauxIR {
 
-    return this.tauxIRService.tauxIR;
+    return this._tauxIRService.tauxIR;
   }
 
   set tauxIR(value: TauxIR) {
-    this.tauxIRService.tauxIR = value;
+    this._tauxIRService.tauxIR = value;
   }
 
   get tauxIRs(): Array<TauxIR> {
 
-    return this.tauxIRService.tauxIRs;
+    return this._tauxIRService.tauxIRs;
   }
 
   set tauxIRs(value: Array<TauxIR>) {
-    this.tauxIRService.tauxIRs = value;
+    this._tauxIRService.tauxIRs = value;
   }
 
+  get tauxIRService(): TauIRService {
+    return this._tauxIRService;
+  }
+
+  set tauxIRService(value: TauIRService) {
+    this._tauxIRService = value;
+  }
 }

@@ -13,22 +13,22 @@ import {HttpClient} from "@angular/common/http";
 export class ComptableService {
   private _comptable !: Comptable;
   private _comptables!: Array<Comptable>;
-  private url = 'http://localhost:8036/api/v1/' + 'comptable/';
+  private _url = 'http://localhost:8036/api/v1/' + 'comptable/';
   public save() : Observable<Comptable>{
-    return this.http.post<Comptable>(this.url, this.comptable);
+    return this._http.post<Comptable>(this._url, this.comptable);
   }
 
   public deleteByCin() : Observable<number>{
-    console.log('url==>' + this.url + 'cin/' + this.comptable.cin);
-    return this.http.delete<number>(this.url +'cin/' + this.comptable.cin);
+    console.log('url==>' + this._url + 'cin/' + this.comptable.cin);
+    return this._http.delete<number>(this._url +'cin/' + this.comptable.cin);
   }
 
 
   public findAll() : Observable<Array<Comptable>>{
-    return this.http.get<Array<Comptable>>(this.url);
+    return this._http.get<Array<Comptable>>(this._url);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get comptable(): Comptable {
@@ -53,4 +53,22 @@ export class ComptableService {
   set comptables(value: Array<Comptable>) {
     this._comptables = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
 }

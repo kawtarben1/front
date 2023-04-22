@@ -9,14 +9,14 @@ import {Employe} from "../../../controler/model/employe.model";
 })
 export class EmployeCreateComponent implements OnInit {
 
-  constructor(private employeService: EmployeService) {
+  constructor(private _employeService: EmployeService) {
   }
 
   ngOnInit(): void {
   }
 
   public save(): void {
-    this.employeService.save().subscribe(data => {
+    this._employeService.save().subscribe(data => {
       if (data != null) {
         this.employes.push({...this.employe});
 
@@ -29,20 +29,27 @@ export class EmployeCreateComponent implements OnInit {
 
   get employe(): Employe {
 
-    return this.employeService.employe;
+    return this._employeService.employe;
   }
 
   set employe(value: Employe) {
-    this.employeService.employe = value;
+    this._employeService.employe = value;
   }
 
   get employes(): Array<Employe> {
 
-    return this.employeService.employes;
+    return this._employeService.employes;
   }
 
   set employes(value: Array<Employe>) {
-    this.employeService.employes = value;
+    this._employeService.employes = value;
   }
 
+  get employeService(): EmployeService {
+    return this._employeService;
+  }
+
+  set employeService(value: EmployeService) {
+    this._employeService = value;
+  }
 }

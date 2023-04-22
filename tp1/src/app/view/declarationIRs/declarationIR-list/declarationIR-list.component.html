@@ -19,15 +19,16 @@
     <td>{{df.salaireTotalBrute}}</td>
     <td>{{df.date}}</td>
     <td>{{df.declarationIRdetailles}}</td>
-    <td><span (click)="delete(i)" class="fa fa-trash btn btn-sm btn-danger"></span></td>
+    <td><span (click)="deleteByCode(df, i)" class="fa fa-trash btn btn-sm btn-danger"></span></td>
   </tr>
   </tbody>
 </table>
 
 </div>
+
 <br>
 <div class="container">
-  <input class="form-control" type="text" placeholder="Search" [(ngModel)]="declarationIR">
+  <input class="form-control" type="text"  placeholder="Search" [(ngModel)]="declarationIR">
   <table class="table table-hover table-striped bg-light table"   >
     <thead>
     <th>Code</th>
@@ -51,4 +52,3 @@
     </tbody>
   </table>
 </div>
-

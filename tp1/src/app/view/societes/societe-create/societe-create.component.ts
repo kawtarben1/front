@@ -8,12 +8,12 @@ import {Societe} from "../../../controler/model/societe.model";
   styleUrls: ['./societe-create.component.css']
 })
 export class SocieteCreateComponent implements OnInit{
-  constructor(private societeService: SocieteService) {
+  constructor(private _societeService: SocieteService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.societeService.save().subscribe(data => {
+    this._societeService.save().subscribe(data => {
       if (data != null) {
         this.societes.push({...this.societe});
         alert('SAVE SUCCESS');
@@ -25,20 +25,27 @@ export class SocieteCreateComponent implements OnInit{
 
   get societe(): Societe {
 
-    return this.societeService.societe;
+    return this._societeService.societe;
   }
 
   set societe(value: Societe) {
-    this.societeService.societe = value;
+    this._societeService.societe = value;
   }
 
   get societes(): Array<Societe> {
 
-    return this.societeService.societes;
+    return this._societeService.societes;
   }
 
   set societes(value: Array<Societe>) {
-    this.societeService.societes = value;
+    this._societeService.societes = value;
   }
 
+  get societeService(): SocieteService {
+    return this._societeService;
+  }
+
+  set societeService(value: SocieteService) {
+    this._societeService = value;
+  }
 }

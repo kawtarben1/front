@@ -9,19 +9,19 @@ import {Observable} from "rxjs";
 export class CategorieComptableService {
   private _categoriecomptable! : CategorieComptable;
   private _categoriecomptables!: Array<CategorieComptable>;
-  private url = 'http://localhost:8036/api/v1/' + 'categorieComptable/';
+  private _url = 'http://localhost:8036/api/v1/' + 'categorieComptable/';
   public save() : Observable<CategorieComptable>{
-    return this.http.post<CategorieComptable>(this.url, this.categoriecomptable);
+    return this._http.post<CategorieComptable>(this._url, this.categoriecomptable);
   }
   public deleteByCode(code: string) : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.categoriecomptable.code);
-    return this.http.delete<number>(this.url +'code/' + this.categoriecomptable.code);
+    console.log('url==>' + this._url + 'code/' + this.categoriecomptable.code);
+    return this._http.delete<number>(this._url +'code/' + this.categoriecomptable.code);
   }
 
   public findAll() : Observable<Array<CategorieComptable>>{
-    return this.http.get<Array<CategorieComptable>>(this.url);
+    return this._http.get<Array<CategorieComptable>>(this._url);
   }
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get categoriecomptable(): CategorieComptable {
@@ -45,4 +45,22 @@ export class CategorieComptableService {
   set categoriecomptables(value: Array<CategorieComptable>) {
     this._categoriecomptables = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
 }

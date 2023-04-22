@@ -10,20 +10,20 @@ import {Societe} from "../../../controler/model/societe.model";
 export class SocieteListComponent implements OnInit{
 
 
-  constructor(private societeService: SocieteService) {
+  constructor(private _societeService: SocieteService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.societeService.findAll().subscribe(data =>  this.societes = data );
+    this._societeService.findAll().subscribe(data =>  this.societes = data );
   }
 
   public deleteByIce(societe: Societe, index: number): void{
     console.log('le ice ' + societe.ice);
     this.societe = societe;
-    this.societeService.deleteByIce().subscribe(data =>  {
+    this._societeService.deleteByIce().subscribe(data =>  {
       if(data>0){
         this.societes.splice(index, 1);
       }else{
@@ -34,20 +34,27 @@ export class SocieteListComponent implements OnInit{
 
   get societe(): Societe {
 
-    return this.societeService.societe;
+    return this._societeService.societe;
   }
 
   set societe(value: Societe) {
-    this.societeService.societe = value;
+    this._societeService.societe = value;
   }
 
   get societes(): Array<Societe> {
 
-    return this.societeService.societes;
+    return this._societeService.societes;
   }
 
   set societes(value: Array<Societe>) {
-    this.societeService.societes = value;
+    this._societeService.societes = value;
   }
 
+  get societeService(): SocieteService {
+    return this._societeService;
+  }
+
+  set societeService(value: SocieteService) {
+    this._societeService = value;
+  }
 }

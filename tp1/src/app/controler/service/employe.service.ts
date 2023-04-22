@@ -9,20 +9,20 @@ import {Employe} from "../model/employe.model";
 export class EmployeService {
   private _employe !: Employe;
   private _employes!: Array<Employe>;
-  private url = 'http://localhost:8036/api/v1/' + 'employe/';
+  private _url = 'http://localhost:8036/api/v1/' + 'employe/';
   public save() : Observable<Employe>{
-    return this.http.post<Employe>(this.url, this.employe);
+    return this._http.post<Employe>(this._url, this.employe);
   }
 
   public deleteByCin() : Observable<number>{
-    console.log('url==>' + this.url + 'cin/' + this.employe.cin);
-    return this.http.delete<number>(this.url +'cin/' + this.employe.cin);
+    console.log('url==>' + this._url + 'cin/' + this.employe.cin);
+    return this._http.delete<number>(this._url +'cin/' + this.employe.cin);
   }
 
   public findAll() : Observable<Array<Employe>>{
-    return this.http.get<Array<Employe>>(this.url);
+    return this._http.get<Array<Employe>>(this._url);
   }
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get employe(): Employe {
@@ -47,4 +47,21 @@ export class EmployeService {
   set employes(value: Array<Employe>) {
     this._employes = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
 }

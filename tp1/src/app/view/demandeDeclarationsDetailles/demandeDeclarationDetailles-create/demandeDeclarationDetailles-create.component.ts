@@ -9,12 +9,12 @@ import {DemandeDeclarationDetailles} from "../../../controler/model/demandeDecla
   styleUrls: ['./demandeDeclarationDetailles-create.component.css']
 })
 export class DemandeDeclarationDetaillesCreateComponent implements OnInit{
-  constructor(private demandeDeclarationDetaillesService: DemandeDeclarationDetaillesService) {
+  constructor(private _demandeDeclarationDetaillesService: DemandeDeclarationDetaillesService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.demandeDeclarationDetaillesService.save().subscribe(data => {
+    this._demandeDeclarationDetaillesService.save().subscribe(data => {
       if (data != null) {
         this.demandeDeclarationDetailless.push({...this.demandeDeclarationDetailles});
         alert('SAVE SUCCESS');
@@ -26,20 +26,27 @@ export class DemandeDeclarationDetaillesCreateComponent implements OnInit{
 
   get demandeDeclarationDetailles(): DemandeDeclarationDetailles {
 
-    return this.demandeDeclarationDetaillesService.demandeDeclarationDetailles;
+    return this._demandeDeclarationDetaillesService.demandeDeclarationDetailles;
   }
 
   set demandeDeclarationDetailles(value: DemandeDeclarationDetailles) {
-    this.demandeDeclarationDetaillesService.demandeDeclarationDetailles = value;
+    this._demandeDeclarationDetaillesService.demandeDeclarationDetailles = value;
   }
 
   get demandeDeclarationDetailless(): Array<DemandeDeclarationDetailles> {
 
-    return this.demandeDeclarationDetaillesService.demandeDeclarationDetailless;
+    return this._demandeDeclarationDetaillesService.demandeDeclarationDetailless;
   }
 
   set demandeDeclarationDetailless(value: Array<DemandeDeclarationDetailles>) {
-    this.demandeDeclarationDetaillesService.demandeDeclarationDetailless = value;
+    this._demandeDeclarationDetaillesService.demandeDeclarationDetailless = value;
   }
 
+  get demandeDeclarationDetaillesService(): DemandeDeclarationDetaillesService {
+    return this._demandeDeclarationDetaillesService;
+  }
+
+  set demandeDeclarationDetaillesService(value: DemandeDeclarationDetaillesService) {
+    this._demandeDeclarationDetaillesService = value;
+  }
 }

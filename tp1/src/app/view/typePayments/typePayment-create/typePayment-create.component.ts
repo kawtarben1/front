@@ -8,12 +8,12 @@ import {TypePayment} from "../../../controler/model/typePayment.model";
   styleUrls: ['./typePayment-create.component.css']
 })
 export class TypePaymentCreateComponent implements OnInit{
-  constructor(private typePaymentService: TypePaymentService) {
+  constructor(private _typePaymentService: TypePaymentService) {
   }
   ngOnInit(): void {
   }
   public save(): void {
-    this.typePaymentService.save().subscribe(data => {
+    this._typePaymentService.save().subscribe(data => {
       if (data != null) {
         this.typePayments.push({...this.typePayment});
         alert('SAVE SUCCESS');
@@ -25,20 +25,27 @@ export class TypePaymentCreateComponent implements OnInit{
 
   get typePayment(): TypePayment {
 
-    return this.typePaymentService.typePayment;
+    return this._typePaymentService.typePayment;
   }
 
   set typePayment(value: TypePayment) {
-    this.typePaymentService.typePayment = value;
+    this._typePaymentService.typePayment = value;
   }
 
   get typePayments(): Array<TypePayment> {
 
-    return this.typePaymentService.typePayments;
+    return this._typePaymentService.typePayments;
   }
 
   set typePayments(value: Array<TypePayment>) {
-    this.typePaymentService.typePayments = value;
+    this._typePaymentService.typePayments = value;
   }
 
+  get typePaymentService(): TypePaymentService {
+    return this._typePaymentService;
+  }
+
+  set typePaymentService(value: TypePaymentService) {
+    this._typePaymentService = value;
+  }
 }

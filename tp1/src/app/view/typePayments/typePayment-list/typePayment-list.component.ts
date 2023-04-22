@@ -10,20 +10,20 @@ import {TypePayment} from "../../../controler/model/typePayment.model";
 export class TypePaymentListComponent implements OnInit{
 
 
-  constructor(private typePaymentService: TypePaymentService) {
+  constructor(private _typePaymentService: TypePaymentService) {
   }
   ngOnInit(): void {
     this.findAll();
   }
 
   public findAll(): void{
-    this.typePaymentService.findAll().subscribe(data =>  this.typePayments = data );
+    this._typePaymentService.findAll().subscribe(data =>  this.typePayments = data );
   }
 
   public deleteByCode(typePayment: TypePayment, index: number): void{
     console.log('le code ' + typePayment.code);
     this.typePayment = typePayment;
-    this.typePaymentService.deleteByCode().subscribe(data =>  {
+    this._typePaymentService.deleteByCode().subscribe(data =>  {
       if(data>0){
         this.typePayments.splice(index, 1);
       }else{
@@ -34,20 +34,27 @@ export class TypePaymentListComponent implements OnInit{
 
   get typePayment(): TypePayment {
 
-    return this.typePaymentService.typePayment;
+    return this._typePaymentService.typePayment;
   }
 
   set typePayment(value: TypePayment) {
-    this.typePaymentService.typePayment = value;
+    this._typePaymentService.typePayment = value;
   }
 
   get typePayments(): Array<TypePayment> {
 
-    return this.typePaymentService.typePayments;
+    return this._typePaymentService.typePayments;
   }
 
   set typePayments(value: Array<TypePayment>) {
-    this.typePaymentService.typePayments = value;
+    this._typePaymentService.typePayments = value;
   }
 
+  get typePaymentService(): TypePaymentService {
+    return this._typePaymentService;
+  }
+
+  set typePaymentService(value: TypePaymentService) {
+    this._typePaymentService = value;
+  }
 }

@@ -9,22 +9,22 @@ import {TypePayment} from "../model/typePayment.model";
 export class TypePaymentService {
   private _typePayment !: TypePayment;
   private _typePayments!: Array<TypePayment>;
-  private url = 'http://localhost:8036/api/v1/' + 'typePayment/';
+  private _url = 'http://localhost:8036/api/v1/' + 'typePayment/';
   public save() : Observable<TypePayment>{
-    return this.http.post<TypePayment>(this.url, this.typePayment);
+    return this._http.post<TypePayment>(this._url, this.typePayment);
   }
 
   public deleteByCode() : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.typePayment.code);
-    return this.http.delete<number>(this.url +'code/' + this.typePayment.code);
+    console.log('url==>' + this._url + 'code/' + this.typePayment.code);
+    return this._http.delete<number>(this._url +'code/' + this.typePayment.code);
   }
 
 
   public findAll() : Observable<Array<TypePayment>>{
-    return this.http.get<Array<TypePayment>>(this.url);
+    return this._http.get<Array<TypePayment>>(this._url);
   }
 
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get typePayment(): TypePayment {
@@ -49,4 +49,22 @@ export class TypePaymentService {
   set typePayments(value: Array<TypePayment>) {
     this._typePayments = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
 }

@@ -8,30 +8,44 @@ import {DemandeDeclaration} from "../../../controler/model/demandeDeclaration.mo
   styleUrls: ['./demandeDeclaration-create.component.css']
 })
 export class DemandeDeclarationCreateComponent implements OnInit{
-  constructor(private demandeDeclarationService: DemandeDeclarationService) {
+  constructor(private _demandeDeclarationService: DemandeDeclarationService) {
   }
   ngOnInit(): void {
   }
-  public save(){
-    this.demandeDeclarationService.save();
+  public save(): void {
+    this._demandeDeclarationService.save().subscribe(data => {
+      if (data != null) {
+        this.demandeDeclarations.push({...this.demandeDeclaration});
+        alert('SAVE SUCCESS');
+      } else {
+        alert('SAVE ERROR ::: CIN EXIST');
+      }
+    });
   }
 
   get demandeDeclaration(): DemandeDeclaration {
 
-    return this.demandeDeclarationService.demandeDeclaration;
+    return this._demandeDeclarationService.demandeDeclaration;
   }
 
   set demandeDeclaration(value: DemandeDeclaration) {
-    this.demandeDeclarationService.demandeDeclaration = value;
+    this._demandeDeclarationService.demandeDeclaration = value;
   }
 
   get demandeDeclarations(): Array<DemandeDeclaration> {
 
-    return this.demandeDeclarationService.demandeDeclarations;
+    return this._demandeDeclarationService.demandeDeclarations;
   }
 
   set demandeDeclarations(value: Array<DemandeDeclaration>) {
-    this.demandeDeclarationService.demandeDeclarations = value;
+    this._demandeDeclarationService.demandeDeclarations = value;
   }
 
+  get demandeDeclarationService(): DemandeDeclarationService {
+    return this._demandeDeclarationService;
+  }
+
+  set demandeDeclarationService(value: DemandeDeclarationService) {
+    this._demandeDeclarationService = value;
+  }
 }

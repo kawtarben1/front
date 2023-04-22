@@ -1,5 +1,5 @@
 export class CategorieDeclaration {
-  public id!:number;
+  public categorie_declaration_id!:number;
   public dateMin = new Date();
   public dateMax = new Date() ;
   public code !: string ;

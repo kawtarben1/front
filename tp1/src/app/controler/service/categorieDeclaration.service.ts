@@ -12,20 +12,20 @@ import {CategorieDeclaration} from "../model/categorieDeclaration.model";
 export class CategorieDeclarationService {
   private _categoriedeclaration !: CategorieDeclaration;
   private _categoriedeclarations!: Array<CategorieDeclaration>;
-  private url = 'http://localhost:8036/api/v1/' + 'categorieDeclaration/';
+  private _url = 'http://localhost:8036/api/v1/' + 'categorieDeclaration/';
   public save() : Observable<CategorieDeclaration>{
-    return this.http.post<CategorieDeclaration>(this.url, this.categoriedeclaration);
+    return this._http.post<CategorieDeclaration>(this._url, this.categoriedeclaration);
   }
 
   public deleteByCode() : Observable<number>{
-    console.log('url==>' + this.url + 'code/' + this.categoriedeclaration.code);
-    return this.http.delete<number>(this.url +'code/' + this.categoriedeclaration.code);
+    console.log('url==>' + this._url + 'code/' + this.categoriedeclaration.code);
+    return this._http.delete<number>(this._url +'code/' + this.categoriedeclaration.code);
   }
 
   public findAll() : Observable<Array<CategorieDeclaration>>{
-    return this.http.get<Array<CategorieDeclaration>>(this.url);
+    return this._http.get<Array<CategorieDeclaration>>(this._url);
   }
-  constructor(private http:HttpClient) { }
+  constructor(private _http:HttpClient) { }
 
 
   get categoriedeclaration(): CategorieDeclaration {
@@ -50,4 +50,23 @@ export class CategorieDeclarationService {
   set categoriedeclarations(value: Array<CategorieDeclaration>) {
     this._categoriedeclarations = value;
   }
+
+  get url(): string {
+    return this._url;
+  }
+
+  set url(value: string) {
+    this._url = value;
+  }
+
+  get http(): HttpClient {
+    return this._http;
+  }
+
+  set http(value: HttpClient) {
+    this._http = value;
+  }
+
+
+
 }
