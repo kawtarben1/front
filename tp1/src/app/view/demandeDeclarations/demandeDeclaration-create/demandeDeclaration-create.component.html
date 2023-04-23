@@ -39,21 +39,28 @@
       <input id="totalNonEsps" type="number" class="form-control"  [(ngModel)]="demandeDeclaration.totalNonEsps">
     </div>
 
-    <div class="form-group">
-      <label for="categorieDeclaration">CategorieDeclaration</label>
-      <input id="categorieDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.categorieDeclaration.categorie_declaration_id">
-    </div>
+
 
     <div class="form-group">
       <label for="comptableDeclarant">ComptableDeclarant</label>
       <input id="comptableDeclarant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableDeclarant.comptable_id">
+      <br>
+      <button class=" btn btn-warning" >En cours</button>&nbsp; &nbsp; &nbsp;
+      <button class=" btn btn-success" >Final</button>
     </div>
-
+<br>
     <div class="form-group">
       <label for="comptableVerifiant">ComptableVerifiant</label>
       <input id="comptableVerifiant" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.comptableVerifiant.comptable_id">
+      <br>
+      <button class="btn btn-success ">Cloturé</button>&nbsp; &nbsp; &nbsp;
+      <button class="btn btn-danger ">à refaire</button>
     </div>
-
+<br>
+    <div class="form-group">
+      <label for="categorieDeclaration">CategorieDeclaration</label>
+      <input id="categorieDeclaration" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.categorieDeclaration.categorie_declaration_id">
+    </div>
     <div class="form-group">
       <label for="Societe">Societe</label>
       <input id="Societe" type="text" class="form-control"  [(ngModel)]="demandeDeclaration.societe.societe_id">
